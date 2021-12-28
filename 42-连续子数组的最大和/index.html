@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>42-连续子数组的最大和 - 《剑指 Offer》（第 2 版）</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "42-\u8fde\u7eed\u5b50\u6570\u7ec4\u7684\u6700\u5927\u548c";
+    var mkdocs_page_input_path = "42-\u8fde\u7eed\u5b50\u6570\u7ec4\u7684\u6700\u5927\u548c.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 《剑指 Offer》（第 2 版）</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 1 - 20 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../03-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">3-数组中重复的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">4-二维数组中的查找</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/">5-替换空格</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">6-从尾到头打印链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../07-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">7-重建二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/">8-二叉树的下一个结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../09-1-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">9-1-用两个栈实现队列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../09-2-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/">9-2-用队列实现栈</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-1-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">10-1-斐波那契数列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-1-%E8%B7%B3%E5%8F%B0%E9%98%B6/">10-1-跳台阶</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-2-%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/">10-2-变态跳台阶</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-3-%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/">10-3-矩形覆盖</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../11-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">11-旋转数组的最小数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../12-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/">12-矩阵中的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../13-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/">13-机器人的运动范围</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-%E5%89%AA%E7%BB%B3%E5%AD%90/">14-剪绳子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../15-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/">15-二进制中1的个数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../16-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/">16-数值的整数次方</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../17-%E6%89%93%E5%8D%B0%E4%BB%8E%201%20%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84%20n%20%E4%BD%8D%E6%95%B0/">17-打印从 1 到最大的 n 位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../18-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9/">18-删除链表中重复的结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../19-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/">19-正则表达式匹配</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../20-%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/">20-表示数值的字符串</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 21 - 40 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../21-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2/">21-调整数组顺序使奇数位于偶数前面</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../22-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/">22-链表中倒数第k个结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../23-%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9/">23-链表中环的入口结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../24-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">24-反转链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../25-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/">25-合并两个排序的链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../27-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/">27-二叉树的镜像</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../28-%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/">28-对称的二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../29-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/">29-顺时针打印矩阵</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../30-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/">30-包含min函数的栈</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../31-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/">31-栈的压入、弹出序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-1-%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">32-1-从上往下打印二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-2-%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C/">32-2-把二叉树打印成多行</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-3-%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">32-3-按之字形顺序打印二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../33-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/">33-二叉搜索树的后序遍历序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../34-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/">34-二叉树中和为某一值的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/">35-复杂链表的复制</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../36-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">36-二叉搜索树与双向链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../37-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/">37-序列化二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../38-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/">38-字符串的排列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../39-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/">39-数组中出现次数超过一半的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../40-%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/">40-最小的K个数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 41 - 60 题</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../41-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">41-数据流中的中位数</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">42-连续子数组的最大和</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#42">第 42 题：连续子数组的最大和</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../44-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97/">44-数字序列中某一位的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../45-%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/">45-把数组排成最小的数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../46-%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">46-把数字翻译成字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../47-%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/">47-礼物的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../48-%E6%9C%80%E9%95%BF%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">48-最长不重复字符串的子字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../49-%E4%B8%91%E6%95%B0/">49-丑数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../50-2-%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6/">50-2-字符流中第一个不重复的字符</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../51-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/">51-数组中的逆序对</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../52-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/">52-两个链表的第一个公共结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97/">53-在排序数组中查找数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../54-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/">54-二叉搜索树的第k个结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55-1-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/">55-1-二叉树的深度</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55-2-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">55-2-平衡二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56-%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/">56-数字在排序数组中出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57-1-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/">57-1-滑动窗口的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57-2-%E9%98%9F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/">57-2-队列的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58-1-%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E5%BA%8F%E5%88%97/">58-1-翻转单词序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58-2-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/">58-2-左旋转字符串</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 61 - 68 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../61-n%20%E4%B8%AA%E9%AA%B0%E5%AD%90%E7%9A%84%E7%82%B9%E6%95%B0/">61-n 个骰子的点数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../62-%E5%AD%A9%E5%AD%90%E4%BB%AC%E7%9A%84%E6%B8%B8%E6%88%8F%28%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%29/">62-孩子们的游戏(圆圈中最后剩下的数)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../63-%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6/">63-股票的最大利润</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../64-%E6%B1%821%2B2%2B3%2B...%2Bn/">64-求1+2+3+...+n</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../65-%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/">65-不用加减乘除做加法</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../66-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/">66-构建乘积数组</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../67-%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0/">67-把字符串转换成整数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68-%E6%A0%91%E4%B8%AD%E4%B8%A4%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">68-树中两个节点的最近公共祖</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">《剑指 Offer》（第 2 版）</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>第 41 - 60 题 &raquo;</li>
+        
+      
+    
+    <li>42-连续子数组的最大和</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="offer-2-42">[剑指 Offer 第 2 版第 42 题] “连续子数组的最大和”做题记录</h1>
+<h3 id="42">第 42 题：连续子数组的最大和</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/50/">连续子数组的最大和</a>，<a href="https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484?tpId=13&amp;tqId=11183&amp;tPage=2&amp;rp=1&amp;ru=%2Fta%2Fcoding-interviews&amp;qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>输入一个 <strong>非空</strong> 整型数组，数组里的数可能为正，也可能为负。</p>
+<p>数组中一个或连续的多个整数组成一个子数组。</p>
+<p>求所有子数组的和的最大值。</p>
+<p>要求时间复杂度为 $O(n)$。</p>
+<p>样例：</p>
+<p>输入：<code>[1, -2, 3, 10, -4, 7, 2, -5]</code></p>
+<p>输出：18</p>
+</blockquote>
+<p>同 LeetCode 第 53 题，题解传送门：<a href="https://www.zybuluo.com/liweiwei1419/note/1394321">LeetCode 第 53 题：连续子数组的最大和</a>。</p>
+<p>“大雪菜”的做法：状态：以前一个数结尾的“连续子数组的最大和”为状态。</p>
+<p>C++ 代码：</p>
+<p><img alt="42-1" src="https://liweiwei1419.github.io/images/sword-for-offer/42-1.png" /></p>
+<p>分析：</p>
+<ul>
+<li>
+<p>根据“最长公共子序列”问题的思路，我们在考虑数组的时候，定义以当前数组元素为结尾的连续子数组，往往会使用情况变得简单一些。</p>
+</li>
+<li>
+<p>设置状态：<code>dp[i]</code> 以 <code>i</code> 结尾的子数组的最大和。</p>
+</li>
+<li>考虑状态转移方程：</li>
+</ul>
+<p>如果 <code>nums[i] &lt; 0，dp[i] = max(dp[i-1] + nums[i],nums[i])</code>; 
+如果 <code>nums[i] &gt;= 0，dp[i] = dp[i-1] + nums[i]</code>;</p>
+<p>综上所述，不论当前考虑的数组元素是大于等于 0 还是小于 0，只要满足 <code>dp[i] = max(dp[i-1] + nums[i], nums[i])</code> 就可以了，这就是状态转移方程。</p>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    public int FindGreatestSumOfSubArray(int[] array) {
+        int n = array.length;
+        if (n == 0) {
+            return 0;
+        }
+        int[] dp = new int[n];
+        dp[0] = array[0];
+        int res = array[0];
+        for (int i = 1; i &lt; n; i++) {
+            dp[i] = Integer.max(dp[i - 1] + array[i], array[i]);
+            res = Integer.max(res, dp[i]);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{6, -3, -2, 7, -15, 1, 2, 2};
+        Solution solution = new Solution();
+        int findGreatestSumOfSubArray = solution.FindGreatestSumOfSubArray(nums);
+        System.out.println(findGreatestSumOfSubArray);
+    }
+}
+</code></pre>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [['$','$'], ['\\(','\\)']],
+  processEscapes: true
+  },
+displayAlign : "left",
+TeX: {
+        equationNumbers: {
+            autoNumber: "all",
+            useLabelIds: true
+        }
+    },
+    "HTML-CSS": {
+        linebreaks: {
+            automatic: true
+        },
+        scale: 100,
+        styles: {
+          ".MathJax_Display": {
+            "text-align": "left",
+            "width" : "auto",
+            "margin": "10px 0px 10px 0px !important",
+            "background-color": "#f5f5f5 !important",
+            "border-radius": "3px !important",
+            border:  "1px solid #ccc !important",
+            padding: "5px 5px 5px 5px !important"
+          },
+          ".MathJax": {
+            "background-color": "#f5f5f5 !important",
+            padding: "2px 2px 2px 2px !important"
+          }
+        }
+    },
+    SVG: {
+        linebreaks: {
+            automatic: true
+        }
+    }
+});
+</script>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../44-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97/" class="btn btn-neutral float-right" title="44-数字序列中某一位的数字">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../41-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="btn btn-neutral" title="41-数据流中的中位数"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../41-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../44-%E6%95%B0%E5%AD%97%E5%BA%8F%E5%88%97%E4%B8%AD%E6%9F%90%E4%B8%80%E4%BD%8D%E7%9A%84%E6%95%B0%E5%AD%97/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
