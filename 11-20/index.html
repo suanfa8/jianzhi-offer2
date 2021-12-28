@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>《剑指 Offer》（第 2 版） 题解（Python 语言实现）第 11-20 题 - 《剑指 Offer》（第 2 版）</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u300a\u5251\u6307 Offer\u300b\uff08\u7b2c 2 \u7248\uff09 \u9898\u89e3\uff08Python \u8bed\u8a00\u5b9e\u73b0\uff09\u7b2c 11-20 \u9898";
+    var mkdocs_page_input_path = "11-20.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 《剑指 Offer》（第 2 版）</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 1 - 20 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../03/">剑指 Offer 03. 数组中重复的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04/">剑指 Offer 04. 二维数组中的查找</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05/">剑指 Offer 05. 替换空格</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06/">剑指 Offer 06. 从尾到头打印链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../07/">剑指 Offer 07. 重建二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08/">剑指 Offer 08. 二叉树的下一个结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../09/">剑指 Offer 09. 用两个栈实现队列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-1/">剑指 Offer 10- I. 斐波那契数列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-2/">剑指 Offer 10- II. 青蛙跳台阶问题</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../11/">剑指 Offer 11. 旋转数组的最小数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../12/">剑指 Offer 12. 矩阵中的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../13/">剑指 Offer 13. 机器人的运动范围</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-1/">剑指 Offer 14- I. 剪绳子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-2/">剑指 Offer 14- II. 剪绳子 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../15/">剑指 Offer 15. 二进制中1的个数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../16/">剑指 Offer 16. 数值的整数次方</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../17/">剑指 Offer 17. 打印从1到最大的n位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../18/">剑指 Offer 18. 删除链表的节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../19/">剑指 Offer 19. 正则表达式匹配</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../20/">剑指 Offer 20. 表示数值的字符串</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 21 - 40 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../21/">剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../22/">剑指 Offer 22. 链表中倒数第k个节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../24/">剑指 Offer 24. 反转链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../25/">剑指 Offer 25. 合并两个排序的链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../26/">剑指 Offer 26. 树的子结构</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../27/">剑指 Offer 27. 二叉树的镜像</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../28/">剑指 Offer 28. 对称的二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../29/">剑指 Offer 29. 顺时针打印矩阵</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../30/">剑指 Offer 30. 包含min函数的栈</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../31/">剑指 Offer 31. 栈的压入、弹出序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-1/">剑指 Offer 32 - I. 从上到下打印二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-2/">剑指 Offer 32 - II. 从上到下打印二叉树 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-3/">剑指 Offer 32 - III. 从上到下打印二叉树 III</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../33/">剑指 Offer 33. 二叉搜索树的后序遍历序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../34/">剑指 Offer 34. 二叉树中和为某一值的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../35/">剑指 Offer 35. 复杂链表的复制</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../36/">剑指 Offer 36. 二叉搜索树与双向链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../37/">剑指 Offer 37. 序列化二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../38/">剑指 Offer 38. 字符串的排列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../39/">剑指 Offer 39. 数组中出现次数超过一半的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../40/">剑指 Offer 40. 最小的k个数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 41 - 60 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../41/">剑指 Offer 41. 数据流中的中位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../42/">剑指 Offer 42. 连续子数组的最大和</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../43/">剑指 Offer 43. 1～n 整数中 1 出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../44/">剑指 Offer 44. 数字序列中某一位的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../45/">剑指 Offer 45. 把数组排成最小的数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../46/">剑指 Offer 46. 把数字翻译成字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../47/">剑指 Offer 47. 礼物的最大价值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../48/">剑指 Offer 48. 最长不含重复字符的子字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../49/">剑指 Offer 49. 丑数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../50/">剑指 Offer 50. 第一个只出现一次的字符</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../51/">剑指 Offer 51. 数组中的逆序对</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../52/">剑指 Offer 52. 两个链表的第一个公共节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53/">剑指 Offer 53 - I. 在排序数组中查找数字 I</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53-2/">剑指 Offer 53 - II. 0～n-1中缺失的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../54/">剑指 Offer 54. 二叉搜索树的第k大节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55/">剑指 Offer 55 - I. 二叉树的深度</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55-2/">剑指 Offer 55 - II. 平衡二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56/">剑指 Offer 56 - I. 数组中数字出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56-2/">剑指 Offer 56 - II. 数组中数字出现的次数 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57/">剑指 Offer 57. 和为s的两个数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57-2/">剑指 Offer 57 - II. 和为s的连续正数序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58/">剑指 Offer 58 - I. 翻转单词顺序</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58-2/">剑指 Offer 58 - II. 左旋转字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../59/">剑指 Offer 59 - I. 滑动窗口的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../59-2/">剑指 Offer 59 - II. 队列的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../60/">剑指 Offer 60. n个骰子的点数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 61 - 68 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../61/">剑指 Offer 61. 扑克牌中的顺子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../62/">剑指 Offer 62. 圆圈中最后剩下的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../63/">剑指 Offer 63. 股票的最大利润</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../64/">剑指 Offer 64. 求1+2+…+n</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../65/">剑指 Offer 65. 不用加减乘除做加法</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../66/">剑指 Offer 66. 构建乘积数组</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../67/">剑指 Offer 67. 把字符串转换成整数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68/">剑指 Offer 68 - I. 二叉搜索树的最近公共祖先</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68-2/">剑指 Offer 68 - II. 二叉树的最近公共祖先</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">《剑指 Offer》（第 2 版）</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>《剑指 Offer》（第 2 版） 题解（Python 语言实现）第 11-20 题</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="offer-2-python-11-20">《剑指 Offer》（第 2 版） 题解（Python 语言实现）第 11-20 题</h1>
+<h3 id="11">第 11 题：旋转数组中的最小数字</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/20/">AcWing：旋转数组的最小数字</a>，<a href="https://www.nowcoder.com/practice/9f3231a991af4f55b95579b44b7a01ba?tpId=13&amp;tqId=11159&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。</p>
+<p>输入一个升序的数组的一个旋转，输出旋转数组的最小元素。</p>
+<p>例如数组 <code>[3,4,5,1,2]</code> 为 <code>[1,2,3,4,5]</code> 的一个旋转，该数组的最小值为 $1$。</p>
+<p>数组可能包含重复项。</p>
+<p><strong>注意</strong>：数组内所含元素非负，若数组大小为0，请返回-1。</p>
+<p>样例：</p>
+<p>输入：<code>nums=[2, 2, 2, 0, 1]</code></p>
+<p>输出：0</p>
+</blockquote>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    // 虽然可以通过，但是 O(n) 的复杂度并不理想
+    public int minNumberInRotateArray(int[] array) {
+        // {3,4,5,1,2}
+        // 1 2 3 4 5
+        int len = array.length;
+        for (int i = 1; i &lt; len - 1; i++) {
+            if (array[i] &lt; array[i - 1]) {
+                return array[i];
+            }
+        }
+        // 如果走到这里，说明数组是升序的，直接返回第 0 号索引的元素就可以了
+        return array[0];
+    }
+
+    public static void main(String[] args) {
+        // int[] nums = new int[]{3, 4, 5, 1, 2};
+        int[] nums = new int[]{1, 2, 3, 4, 5};
+        Solution solution = new Solution();
+        int minNumberInRotateArray = solution.minNumberInRotateArray(nums);
+        System.out.println(minNumberInRotateArray);
+    }
+}
+</code></pre>
+<p>思路1 ：这是典型的可以使用二分法解决的问题，应用二分法的模板。特别注意，数组可能包含重复项，因此中间项如果等于末尾项，例如：<code>[1, 1, 1, 1, 1, 0, 1]</code> ，不能砍掉一半，只能把末尾项排除掉。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution:
+    def findMin(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        size = len(nums)
+        if size == 0:
+            return -1
+        l = 0
+        r = size - 1
+        while l &lt; r:
+            mid = l + (r - l) // 2
+
+            if nums[mid] &lt; nums[r]:
+                # mid 有可能是最小值
+                # [7,8,1,2,3]
+                r = mid
+            elif nums[mid] &gt; nums[r]:
+                # mid 肯定不是最小值
+                # [7,8,9,10,11,1,2,3]
+                l = mid + 1
+            else:
+                # 都有可能，所以就把 r 排除了
+                # [1,1,1,1,1,0,1]
+                assert nums[mid] == nums[r]
+                r = r - 1
+        return nums[l]
+</code></pre>
+<p>思路2 ：还可以使用“分治法”，“分治法”就不用在乎有没有重复项了。但是“分治法”无异于把整个数组都看一遍，时间复杂度为 $O(n)$。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution:
+    def findMin(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        size = len(nums)
+        if size == 0:
+            return -1
+        if size == 1:
+            return nums[0]
+        return self.__findMin(nums, 0, size - 1)
+
+    def __findMin(self, nums, left, right):
+        if left == right:
+            return nums[left]
+        if left + 1 == right:
+            return min(nums[left], nums[right])
+        mid = left + (right - left) // 2
+        return min(self.__findMin(nums, left, mid), self.__findMin(nums, mid + 1, right))
+</code></pre>
+<p>分析：可以使用二分查找的思想，因为最小的数字很可能出现在首位，从后向前扫描是求解这道题的重要技巧，否则需要分类讨论，就变得麻烦了（即让后面的指针向前移动）。</p>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution2 {
+
+    public int minNumberInRotateArray(int[] array) {
+        int len = array.length;
+        if (len == 0) {
+            return 0;
+        }
+        int first = 0;
+        int last = len - 1;
+        while (first &lt; last) {
+            int mid = first + (last - first) / 2;
+            if (array[mid] &gt; array[last]) {
+                first = mid + 1;
+            } else if (array[mid] == array[last]) {
+                last = last - 1;
+            } else {
+                last = mid;
+            }
+        }
+        return array[first];
+    }
+
+    public static void main(String[] args) {
+        // int[] nums = new int[]{3};
+        // int[] nums = new int[]{3, 4, 5, 6, 7, 8, 9, 1, 2};
+        // int[] nums = new int[]{1, 2, 3, 4, 5};
+        int[] nums = new int[]{2, 2, 2, 1, 2};
+        Solution2 solution2 = new Solution2();
+        int minNumberInRotateArray = solution2.minNumberInRotateArray(nums);
+        System.out.println(minNumberInRotateArray);
+    }
+}
+</code></pre>
+<h3 id="12">第 12 题：矩阵中的路径</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/21/">AcWing：矩阵中的路径</a>。</p>
+<blockquote>
+<p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。</p>
+<p>路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。</p>
+<p>如果一条路径经过了矩阵中的某一个格子，则之后不能再次进入这个格子。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>输入的路径不为空；</li>
+<li>所有出现的字符均为大写英文字母；</li>
+</ul>
+<p>样例：</p>
+<p>```
+matrix=
+[
+       ["A","B","C","E"],
+       ["S","F","C","S"],
+       ["A","D","E","E"]
+]</p>
+<p>str="BCCE" , return "true" </p>
+<p>str="ASAE" , return "false"
+```</p>
+</blockquote>
+<p>思路：典型的 floodfill 解法，本质上是递归回溯算法。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    directions = [(-1, 0), (1, 0), (0, 1), (0, -1)]
+
+    def hasPath(self, matrix, string):
+        &quot;&quot;&quot;
+        :type matrix: List[List[str]]
+        :type string: str
+        :rtype: bool
+        &quot;&quot;&quot;
+        rows = len(matrix)
+        if rows == 0:
+            return False
+        cols = len(matrix[0])
+
+        marked = [[False for _ in range(cols)] for _ in range(rows)]
+
+        for i in range(rows):
+            for j in range(cols):
+                if self.__has_path(matrix, string, 0, i, j, marked, rows, cols):
+                    return True
+        return False
+
+    def __has_path(self, matrix, word, index, start_x, start_y, marked, m, n):
+        # 注意：首先判断极端情况
+        if index == len(word) - 1:
+            return matrix[start_x][start_y] == word[-1]
+        if matrix[start_x][start_y] == word[index]:
+            # 先占住这个位置，搜索不成功的话，要释放掉
+            marked[start_x][start_y] = True
+            for direction in self.directions:
+                new_x = start_x + direction[0]
+                new_y = start_y + direction[1]
+                if 0 &lt;= new_x &lt; m and 0 &lt;= new_y &lt; n and not marked[new_x][new_y]:
+                    if self.__has_path(matrix, word, index + 1, new_x, new_y, marked, m, n):
+                        return True
+            marked[start_x][start_y] = False
+        return False
+
+
+if __name__ == '__main__':
+    matrix = [
+        [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;E&quot;],
+        [&quot;S&quot;, &quot;F&quot;, &quot;E&quot;, &quot;S&quot;],
+        [&quot;A&quot;, &quot;D&quot;, &quot;E&quot;, &quot;E&quot;]
+    ]
+
+    str = &quot;ABCEFSADEESE&quot;
+
+    solution = Solution()
+    result = solution.hasPath(matrix, str)
+    print(result)
+</code></pre>
+<p>同 LeetCode 第 79 题，传送门：<a href="https://leetcode-cn.com/problems/word-search/">79. 单词搜索</a>，<a href="https://www.nowcoder.com/practice/c61c6999eecb4b8f88a98f66b273a3cc?tpId=13&amp;tqId=11218&amp;tPage=4&amp;rp=4&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>给定一个二维网格和一个单词，找出该单词是否存在于网格中。</p>
+<p>单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。</p>
+<p><strong>示例:</strong></p>
+<p><code>board =
+[
+       ['A','B','C','E'],
+       ['S','F','C','S'],
+       ['A','D','E','E']
+]</code></p>
+<p>给定 word = "ABCCED", 返回 true.
+给定 word = "SEE", 返回 true.
+给定 word = "ABCB", 返回 false.</p>
+</blockquote>
+<p>思路：其实就是 floodfill 算法，这是一个非常基础的算法，一定要掌握。特别要弄清楚，<code>marked</code> 数组的作用，一开始要占住这个位置，发现此路不通的时候，要释放掉。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution:
+    #         (x-1,y)
+    # (x,y-1) (x,y) (x,y+1)
+    #         (x+1,y)
+
+    directions = [(0, -1), (-1, 0), (0, 1), (1, 0)]
+
+    def exist(self, board, word):
+        &quot;&quot;&quot;
+        :type board: List[List[str]]
+        :type word: str
+        :rtype: bool
+        &quot;&quot;&quot;
+
+        m = len(board)
+        n = len(board[0])
+
+        marked = [[False for _ in range(n)] for _ in range(m)]
+        for i in range(m):
+            for j in range(n):
+                # 对每一个格子都从头开始搜索
+                if self.__search_word(board, word, 0, i, j, marked, m, n):
+                    return True
+        return False
+
+    def __search_word(self, board, word, index, start_x, start_y, marked, m, n):
+        # 先写递归终止条件
+        if index == len(word) - 1:
+            return board[start_x][start_y] == word[index]
+
+        # 中间匹配了，再继续搜索
+        if board[start_x][start_y] == word[index]:
+            # 先占住这个位置，搜索不成功的话，要释放掉
+            marked[start_x][start_y] = True
+            for direction in self.directions:
+                new_x = start_x + direction[0]
+                new_y = start_y + direction[1]
+                if 0 &lt;= new_x &lt; m and 0 &lt;= new_y &lt; n and \
+                        not marked[new_x][new_y] and \
+                        self.__search_word(board, word,
+                                           index + 1,
+                                           new_x, new_y,
+                                           marked, m, n):
+                    return True
+            marked[start_x][start_y] = False
+        return False
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    /**
+     *       x-1,y
+     * x,y-1   x,y    x,y+1
+     *       x+1,y
+     */
+    private int[][] direct = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+    public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
+        int len = matrix.length;
+        if (len == 0) {
+            return false;
+        }
+        boolean[] marked = new boolean[len];
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                if (dfs(matrix, rows, cols, str, str.length, marked, i, j, 0)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean dfs(char[] matrix, int rows, int cols, char[] str, int len, boolean[] marked, int i, int j, int start) {
+        // 匹配到最后，说明找到一条路径
+        int index = getIndex(i, j, cols);
+        if (start == len - 1) {
+            return matrix[index] == str[start];
+        }
+        // 要特别小心！
+        marked[index] = true;
+        if (matrix[index] == str[start]) {
+            // 当前匹配了，才开始尝试走后面的路
+            for (int k = 0; k &lt; 4; k++) {
+                // 特别小心，一定是一个初始化的新的变量
+                int newi = i + direct[k][0];
+                int newj = j + direct[k][1];
+                int nextIndex = getIndex(newi, newj, cols);
+                if (inArea(newi, newj, rows, cols) &amp;&amp; !marked[nextIndex]) {
+                    // marked[nextIndex] = true; 不在这里设置
+                    if (dfs(matrix, rows, cols, str, len, marked, newi, newj, start + 1)) {
+                        return true;
+                    }
+                    // marked[nextIndex] = false; 不在这里设置
+                }
+            }
+        }
+        // 要特别小心！
+        marked[index] = false;
+        return false;
+    }
+
+    private int getIndex(int x, int y, int cols) {
+        return x * cols + y;
+    }
+
+    private boolean inArea(int x, int y, int rows, int cols) {
+        return x &gt;= 0 &amp;&amp; x &lt; rows &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; cols;
+    }
+
+    public static void main(String[] args) {
+        char[] matrix = new char[]{'a', 'b', 't', 'g',
+                'c', 'f', 'c', 's',
+                'j', 'd', 'e', 'h'};
+        int rows = 3;
+        int cols = 4;
+        Solution solution = new Solution();
+        char[] str = &quot;hscfdeh&quot;.toCharArray();
+        boolean hasPath = solution.hasPath(matrix, rows, cols, str);
+        System.out.println(hasPath);
+    }
+}
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    /**
+     *       x-1,y
+     * x,y-1   x,y    x,y+1
+     *       x+1,y
+     */
+    private int[][] direct = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+    public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
+        int len = matrix.length;
+        if (len == 0) {
+            return false;
+        }
+        boolean[] marked = new boolean[len];
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
+                if (dfs(matrix, rows, cols, str, str.length, marked, i, j, 0)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean dfs(char[] matrix, int rows, int cols, char[] str, int len, boolean[] marked, int i, int j, int start) {
+        // 匹配到最后，说明找到一条路径
+        int index = getIndex(i, j, cols);
+        if (start == len - 1) {
+            return matrix[index] == str[start];
+        }
+        // 要特别小心！
+        marked[index] = true;
+        if (matrix[index] == str[start]) {
+            // 当前匹配了，才开始尝试走后面的路
+            for (int k = 0; k &lt; 4; k++) {
+                // 特别小心，一定是一个初始化的新的变量
+                int newi = i + direct[k][0];
+                int newj = j + direct[k][1];
+                int nextIndex = getIndex(newi, newj, cols);
+                if (inArea(newi, newj, rows, cols) &amp;&amp; !marked[nextIndex]) {
+                    // marked[nextIndex] = true; 不在这里设置
+                    if (dfs(matrix, rows, cols, str, len, marked, newi, newj, start + 1)) {
+                        return true;
+                    }
+                    // marked[nextIndex] = false; 不在这里设置
+                }
+            }
+        }
+        // 要特别小心！
+        marked[index] = false;
+        return false;
+    }
+
+    private int getIndex(int x, int y, int cols) {
+        return x * cols + y;
+    }
+
+    private boolean inArea(int x, int y, int rows, int cols) {
+        return x &gt;= 0 &amp;&amp; x &lt; rows &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; cols;
+    }
+
+    public static void main(String[] args) {
+        char[] matrix = new char[]{'a', 'b', 't', 'g',
+                'c', 'f', 'c', 's',
+                'j', 'd', 'e', 'h'};
+        int rows = 3;
+        int cols = 4;
+        Solution solution = new Solution();
+        char[] str = &quot;hscfdeh&quot;.toCharArray();
+        boolean hasPath = solution.hasPath(matrix, rows, cols, str);
+        System.out.println(hasPath);
+    }
+}
+</code></pre>
+<h3 id="13">第 13 题：机器人的运动范围</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/22/">AcWing：机器人的运动范围</a>，<a href="https://www.nowcoder.com/practice/623a5ac0ea5b4e5f95552655361ae0a8?tpId=13&amp;tqId=11203&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>地上有一个 $m$ 行和 $n$ 列的方格，横纵坐标范围分别是 $0∼m−1$ 和 $0∼n−1$。</p>
+<p>一个机器人从坐标 $(0,0)$ 的格子开始移动，每一次只能向左，右，上，下四个方向移动一格。</p>
+<p>但是不能进入行坐标和列坐标的数位之和大于 $k$ 的格子。</p>
+<p>请问该机器人能够达到多少个格子？</p>
+<p>样例1：</p>
+<p>输入：$k=7$，$m=4$，$n=5$</p>
+<p>输出：20</p>
+<p>样例2：</p>
+<p>输入：$k=18$，$m=40$，$n=40$</p>
+<p>输出：1484</p>
+<p>解释：当 k 为 18 时，机器人能够进入方格（35,37），因为 3+5+3+7 = 18。
+   但是，它不能进入方格（35,38），因为 3+5+3+8 = 19。</p>
+<p><strong>注意</strong>:</p>
+<ol>
+<li><code>0&lt;=m&lt;=50</code></li>
+<li><code>0&lt;=n&lt;=50</code></li>
+<li><code>0&lt;=k&lt;=100</code></li>
+</ol>
+</blockquote>
+<p>思路：使用广度优先搜索（BFS），注意不是深度优先搜索（DFS）。</p>
+<p>Python 代码：<strong>特别注意，mark 的时候，一定是放入队列的时候就 mark，不是等到出队的时候 mark，否则会出现很多重复</strong></p>
+<pre><code class="language-python">class Solution(object):
+
+    def __count_bit_sum(self, num):
+        res = 0
+        while num:
+            res += num % 10
+            num //= 10
+        return res
+
+    def __in_area(self, x, y, rows, cols):
+        return 0 &lt;= x &lt; rows and 0 &lt;= y &lt; cols
+
+    def movingCount(self, threshold, rows, cols):
+        &quot;&quot;&quot;
+        :type threshold: int
+        :type rows: int
+        :type cols: int
+        :rtype: int
+        &quot;&quot;&quot;
+        if threshold &lt; 0 or rows == 0 or cols == 0:
+            return 0
+
+        if threshold == 0:
+            return 1
+
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        marked = [[False for _ in range(cols)] for _ in range(rows)]
+
+        queue = [(0, 0)]
+        res = 0
+
+        while queue:
+            top_x, top_y = queue.pop(0)
+
+            for direction in directions:
+                new_x = top_x + direction[0]
+                new_y = top_y + direction[1]
+
+                if self.__in_area(new_x, new_y, rows, cols) \
+                        and not marked[new_x][new_y] \
+                        and self.__count_bit_sum(new_x) + self.__count_bit_sum(new_y) &lt;= threshold:
+                    queue.append((new_x, new_y))
+                    # 注意：应该写在这里，而不是 pop 出队列的时候
+                    marked[new_x][new_y] = True
+                    res += 1
+        return res
+
+
+if __name__ == '__main__':
+    k = 18
+    m = 40
+    n = 40
+    solution = Solution()
+    result = solution.movingCount(k, m, n)
+    print(result)
+</code></pre>
+<h3 id="14">第 14 题：剪绳子</h3>
+<p>说明：同 LeetCode 343 题。</p>
+<p>传送门：<a href="https://www.acwing.com/problem/content/24/">AcWing 25. 剪绳子</a>，<a href="https://www.nowcoder.com/practice/623a5ac0ea5b4e5f95552655361ae0a8?tpId=13&amp;tqId=11203&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>给你一根长度为 $n$ 的绳子，请把绳子剪成 $m$  段（$m$、$n$ 都是整数，$2 \le n \le 58^2$ 并且 $m \ge2$）。</p>
+<p>每段的绳子的长度记为 <code>k[0]、k[1]、……、k[m]</code>。<code>k[0]k[1] … k[m]</code> 可能的最大乘积是多少？</p>
+<p>例如当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到最大的乘积18。</p>
+<p>样例：</p>
+<p>输入：8</p>
+<p>输出：18</p>
+<p>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
+</blockquote>
+<p>分析：这道题在牛客网上没有 online judge ，我们可以去完成 LeetCode 上第 343 题检验自己的代码是否编写正确。</p>
+<p>动态规划。关键在于画出树形结构图。</p>
+<p>状态：这个状态就是题目中要我们求的。把整数 <code>i</code> 至少分割成 $2$ 个部分，各个部分都大于 $0$，它们的乘积。</p>
+<p>状态转移方程：用  <code>j</code> 遍历 <code>1, 2, ..., i - 1</code> ，要么分割成 <code>i - j</code> 和 <code>j</code> ，要么分隔成  <code>j</code> 和 <code>dp[i - j]</code> ，取最大者。</p>
+<p>Python 代码：<code>dp[0]</code> 这个位置没有使用</p>
+<pre><code class="language-python">class Solution(object):
+    def maxProductAfterCutting(self, length):
+        &quot;&quot;&quot;
+        :type length: int
+        :rtype: int
+        &quot;&quot;&quot;
+
+        assert length &gt; 1
+
+        dp = [0 for _ in range(length + 1)]
+
+        dp[1] = 1
+
+        for i in range(2, length + 1):
+            for j in range(1, i):
+                dp[i] = max(dp[i], j * (i - j), j * dp[i - j])
+        return dp[length]
+</code></pre>
+<p>Java 代码：使用动态规划</p>
+<pre><code class="language-java">class Solution {
+    public int integerBreak(int n) {
+        if (n &lt;= 1) {
+            return 1;
+        }
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i &lt;= n; i++) {
+            int max = 0;
+            for (int j = 1; j &lt; i; j++) {
+                max = max3(max, j * (i - j), j * dp[i - j]);
+            }
+            dp[i] = max;
+        }
+        return dp[n];
+    }
+
+    private int max3(int num1, int num2, int num3) {
+        return Integer.max(Integer.max(num1, num2), num3);
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int integerBreak = solution.integerBreak(8);
+        System.out.println(integerBreak);
+    }
+}
+</code></pre>
+<p>Java 代码：使用贪心算法</p>
+<pre><code class="language-java">class Solution2 {
+    public int integerBreak(int n) {
+        if (n &lt;= 2) {
+            return 1;
+        }
+        if (n == 3) {
+            return 2;
+        }
+        if (n == 4) {
+            return 4;
+        }
+        // 接下来就是 n &gt;= 5 的时候的逻辑了
+        int res = 1;
+        while (n &gt; 4) {
+            res *= 3;
+            n -= 3;
+        }
+        res *= n;
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Solution2 solution2 = new Solution2();
+        int integerBreak = solution2.integerBreak(8);
+        System.out.println(integerBreak);
+    }
+}
+</code></pre>
+<h3 id="leetcode-343">LeetCode 343 题：整数拆分</h3>
+<p>传送门：<a href="https://leetcode-cn.com/problems/integer-break/">343. 整数拆分</a></p>
+<blockquote>
+<p>给定一个正整数 <em>n</em>，将其拆分为<strong>至少</strong>两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。</p>
+<p><strong>示例 1:</strong></p>
+<p>输入: 2
+输出: 1
+解释: 2 = 1 + 1, 1 × 1 = 1。</p>
+<p><strong>示例 2:</strong></p>
+<p>输入: 10
+输出: 36
+解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36。</p>
+<p><strong>说明:</strong> 你可以假设 <em>n</em> 不小于 2 且不大于 58。</p>
+</blockquote>
+<p>分析：这是一个很经典的问题。可以使用贪心算法。</p>
+<p>贪心算法：$2(n-2)&gt;n$ 得到 $n &gt; 4$，$3(n-3)&gt;n$ ，得到 $n&gt;4.5$，即 $n$ 大于等于 $5$ 的时候。</p>
+<p>结论：不能包含 $1$ ，所有的加法因子只能有 $2$ 和 $3$，最多只有 $2$ 个 $2$，因此加法因子里没有 $4$ 。</p>
+<p><img alt="image-20190108000201883" src="https://ws2.sinaimg.cn/large/006tNc79ly1fyygsgdhsxj30za0digot.jpg" /></p>
+<p>Java 代码：</p>
+<pre><code class="language-java">class Solution2 {
+    public int integerBreak(int n) {
+        if (n &lt;= 2) {
+            return 1;
+        }
+        if (n == 3) {
+            return 2;
+        }
+        if (n == 4) {
+            return 4;
+        }
+        // 接下来就是 n &gt;= 5 的时候的逻辑了
+        int res = 1;
+        while (n &gt; 4) {
+            res *= 3;
+            n -= 3;
+        }
+        res *= n;
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Solution2 solution2 = new Solution2();
+        int integerBreak = solution2.integerBreak(8);
+        System.out.println(integerBreak);
+    }
+}
+</code></pre>
+<p>C++ 代码：</p>
+<p><img alt="image-20190108000417713" src="http://upload-images.jianshu.io/upload_images/414598-92c4cf93cd81b59f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<h3 id="16">第 16 题：数值的整数次方（快速幂）</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/26/">AcWing：数值的整数次方</a>，<a href="https://www.nowcoder.com/practice/1a834e5e3e1a4b7ba251417554e07c00?tpId=13&amp;tqId=11165&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>实现函数<em>double Power(double base, int exponent)</em>，求<em>base</em>的 <em>exponent</em>次方。</p>
+<p>不得使用库函数，同时不需要考虑大数问题。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>不会出现底数和指数同为 0 的情况</li>
+</ul>
+<p>样例1：</p>
+<p>输入：10 ，2</p>
+<p>输出：100</p>
+<p>样例2：</p>
+<p>输入：10 ，-2  </p>
+<p>输出：0.01</p>
+</blockquote>
+<p>分析：数值的整数次方，要处理一些细节问题，加法变成乘法。考虑底数为 $0$ 的时候，指数不能为负数。</p>
+<p>思路1：使用递归</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def Power(self, base, exponent):
+        &quot;&quot;&quot;
+        :type base: float
+        :type exponent: int
+        :rtype: float
+        &quot;&quot;&quot;
+
+        if exponent == 0:
+            return 1
+
+        if exponent &lt; 0:
+            return 1 / self.Power(base, -exponent)
+
+        # 如果是奇数
+        if exponent &amp; 1:
+            return base * self.Power(base, exponent - 1)
+        return self.Power(base * base, exponent &gt;&gt; 1)
+</code></pre>
+<p>思路2：非递归的写法，把 exponent 想象成二进制。</p>
+<p>Python 代码：在理解的基础上记住这个写法</p>
+<pre><code class="language-python">class Solution(object):
+    def Power(self, base, exponent):
+        &quot;&quot;&quot;
+        :type base: float
+        :type exponent: int
+        :rtype: float
+        &quot;&quot;&quot;
+
+        if exponent &lt; 0:
+            base = 1 / base
+            # 负数变成正数
+            exponent = -exponent
+
+        res = 1
+        while exponent:
+            if exponent &amp; 1:
+                res *= base
+            base *= base
+            exponent &gt;&gt;= 1
+        return res
+</code></pre>
+<blockquote>
+<p>给定一个 double 类型的浮点数 base 和 int 类型的整数 exponent 。求 base 的 exponent 次方。</p>
+</blockquote>
+<p>求解思路与关键</p>
+<ul>
+<li>
+<p>注意分类讨论与与递归函数的设计。</p>
+</li>
+<li>
+<p>关键：将循环变成递归操作，每次折半求值，避免死板做循环，这种感觉像加法变乘法。</p>
+</li>
+<li>
+<p>注意细节：底数为 0 的时候，指数为负数是没有意义的</p>
+</li>
+<li>
+<p>精确计算，转成浮点数 0.125：</p>
+</li>
+</ul>
+<pre><code class="language-java">System.out.println((double) 1 / 8);
+</code></pre>
+<ul>
+<li>右移 1 位运算等价于“除以 2”：</li>
+</ul>
+<pre><code class="language-java">// exponent 指数，exponent &gt;&gt; 1 表示将指数除以 2
+System.out.println(exponent &gt;&gt; 1);
+</code></pre>
+<ul>
+<li>使用位运算的 与 运算符代替了求余数运算，来判断一个数是奇数还是偶数：</li>
+</ul>
+<pre><code class="language-java">if ((exponent &amp; 1) == 0) {
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    public double Power(double base, int exponent) {
+        // 先把极端情况考虑到
+        // 不能用 == 比较两个浮点数是否相等，因为有误差
+        if (equals(base, 0) &amp;&amp; exponent &lt; 0) {
+            throw new IllegalArgumentException(&quot;当底数为 0 的时候，指数为负数没有意义&quot;);
+        }
+        if (exponent == 0) {
+            return 1.0;
+        }
+        // 下面将指数的两种情况合并成一种情况考虑
+        if (exponent &gt; 0) {
+            return power(base, exponent);
+        } else {
+            return power(1 / base, -exponent);
+        }
+    }
+
+    public double power(double base, int exponent) {
+        if (exponent == 0) {
+            return 1.0;
+        }
+        if (exponent % 2 == 0) {
+            double square = power(base, exponent / 2);
+            return square * square;
+        } else {
+            double square = power(base, (exponent - 1) / 2);
+            return square * square * base;
+        }
+    }
+
+    private boolean equals(double num1, double num2) {
+        return num1 - num2 &lt; 0.000001 &amp;&amp; num1 - num2 &gt; -0.000001;
+    }
+}
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    public double Power(double base, int exponent) {
+        if (exponent == 0) {
+            return 1;
+        }
+        if (exponent &lt; 0) {
+            return 1 / Power(base, -exponent);
+        }
+        // 使用位运算的 与 运算符代替了求余数运算，来判断一个数是奇数还是偶数
+        if ((exponent &amp; 1) == 0) {
+            double square = Power(base, exponent &gt;&gt; 1);
+            return square * square;
+        } else {
+            double square = Power(base, (exponent - 1) &gt;&gt; 1);
+            return square * square * base;
+        }
+    }
+
+    public static void main(String[] args) {
+        int base = 3;
+        int exponent = -3;
+        Solution solution = new Solution();
+        double result1 = solution.Power(base, exponent);
+        System.out.println(result1);
+        exponent = 6;
+        double result2 = solution.Power(base, exponent);
+        System.out.println(result2);
+        // exponent 指数，exponent &gt;&gt; 1 表示将指数除以 2
+        System.out.println(exponent &gt;&gt; 1);
+    }
+}
+</code></pre>
+<h3 id="leetcode-50-powx-n">LeetCode 第 50 题：$Pow(x, n)$</h3>
+<p>传送门：<a href="https://leetcode-cn.com/problems/powx-n/">50. Pow(x, n)</a>。</p>
+<blockquote>
+<p>实现 <a href="https://www.cplusplus.com/reference/valarray/pow/">pow(<em>x</em>, <em>n</em>)</a> ，即计算 x 的 n 次幂函数。</p>
+<p><strong>示例 1:</strong></p>
+<p><code>输入: 2.00000, 10
+输出: 1024.00000</code></p>
+<p><strong>示例 2:</strong></p>
+<p><code>输入: 2.10000, 3
+输出: 9.26100</code></p>
+<p><strong>示例 3:</strong></p>
+<p><code>输入: 2.00000, -2
+输出: 0.25000
+解释: 2-2 = 1/22 = 1/4 = 0.25</code></p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>-100.0 &lt; <em>x</em> &lt; 100.0</li>
+<li><em>n</em> 是 32 位有符号整数，其数值范围是 [−231, 231 − 1] 。</li>
+</ul>
+</blockquote>
+<p>思路1：使用循环，把指数 $n$ 想成二进制</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution:
+    def myPow(self, x, n):
+        &quot;&quot;&quot;
+        :type x: float
+        :type n: int
+        :rtype: float
+        &quot;&quot;&quot;
+
+
+        if n &lt; 0:
+            x = 1 / x
+            n = - n
+        res = 1
+        while n:
+            if n &amp; 1 == 1:
+                res *= x
+            # 注意：这里不要写成  res *= res
+            x *= x 
+            n &gt;&gt;= 1
+        return res
+</code></pre>
+<p>思路2：将循环变成递归操作，每次折半求值，避免死板做循环，这种感觉像加法变乘法。（脑子里回忆公式）。注意细节：底数为 $0$ 的时候，指数为负数是没有意义的。</p>
+<p>Python 代码：递归写法：<strong>注意边界条件</strong></p>
+<pre><code class="language-python">class Solution:
+    def myPow(self, x, n):
+        &quot;&quot;&quot;
+        :type x: float
+        :type n: int
+        :rtype: float
+        &quot;&quot;&quot;
+        # 对 x = 0 ， n &lt; 0 还要做特判
+        if n == 0:
+            return 1
+        if n &lt; 0:
+            return 1 / self.myPow(x, -n)
+
+        if n &amp; 1:
+            return x * self.myPow(x, n - 1)
+        return self.myPow(x * x, n // 2)
+</code></pre>
+<p>基本的写法：</p>
+<p>https://blog.csdn.net/happyaaaaaaaaaaa/article/details/76552127</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 16 题：数值的整数次方（快速幂）-1" src="http://upload-images.jianshu.io/upload_images/414598-95b1ba5229d3f933.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>模板写法1：</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 16 题：数值的整数次方（快速幂）-2" src="http://upload-images.jianshu.io/upload_images/414598-a729b89eecb30d06.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>模板写法2：</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 16 题：数值的整数次方（快速幂）-3" src="http://upload-images.jianshu.io/upload_images/414598-0e2a30015099f0b0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<h3 id="17-1-n">第 17 题：打印从 1 到最大的 n 位数</h3>
+<p>传送门：<a href="https://www.nowcoder.com/practice/623a5ac0ea5b4e5f95552655361ae0a8?tpId=13&amp;tqId=11203&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
+</blockquote>
+<h3 id="18-1-o1">第 18-1 题：在 $O(1)$ 时间删除链表结点</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/85/">AcWing：在 O(1) 时间删除链表结点</a>。</p>
+<blockquote>
+<p>给定单向链表的一个节点指针，定义一个函数在$O(1)$ 时间删除该结点。</p>
+<p>假设链表一定存在，并且该节点一定不是尾节点。</p>
+<p>样例：</p>
+<p>输入：链表 <code>1-&gt;4-&gt;6-&gt;8</code>，删掉节点：第 2 个节点即 6（头节点为第 0 个节点）</p>
+<p>输出：新链表 <code>1-&gt;4-&gt;8</code></p>
+</blockquote>
+<p>思路：待删除的结点是末尾结点的情况比较容易忽略，刚好题目中说“该节点一定不是尾节点”。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python"># 28. 在O(1)时间删除链表结点
+# 给定单向链表的一个节点指针，定义一个函数在O(1)时间删除该结点。
+#
+# 假设链表一定存在，并且该节点一定不是尾节点。
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class Solution(object):
+    def deleteNode(self, node):
+        &quot;&quot;&quot;
+        :type node: ListNode
+        :rtype: void
+        &quot;&quot;&quot;
+        # 先保存下一个结点
+        next_node = node.next
+        # 把下一个结点的 val 赋值给当前结点
+        node.val = next_node.val
+        # 把当前结点的 next 指针指向下一个结点的 next 指针
+        node.next = next_node.next
+        # 切断下一个结点与原链表的连接
+        next_node.next = None
+</code></pre>
+<p>C++ 代码：</p>
+<p><img alt="image-20190108002212753" src="https://ws2.sinaimg.cn/large/006tNc79ly1fyyhdg1a3zj30m40fsteq.jpg" /></p>
+<h3 id="18-2">第 18-2 题：删除链表中重复的结点</h3>
+<p>同 LeetCode 第82 题。</p>
+<p>传送门：<a href="https://www.acwing.com/problem/content/27/">AcWing：删除链表中重复的节点</a>，<a href="https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&amp;tqId=11209&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留。</p>
+<p>样例1：</p>
+<p>输入：<code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code></p>
+<p>输出：<code>1-&gt;2-&gt;5</code></p>
+<p>样例2：</p>
+<p>输入：<code>1-&gt;1-&gt;1-&gt;2-&gt;3</code></p>
+<p>输出：<code>2-&gt;3</code></p>
+</blockquote>
+<p>思路：因为头结点可能被删，所以要设置一个虚拟头结点。</p>
+<p>Python 写法：</p>
+<pre><code class="language-python">class Solution(object):
+    def deleteDuplication(self, head):
+        &quot;&quot;&quot;
+        :type head: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+        if head is None:
+            return None
+
+        dummy = ListNode(-1)
+        dummy.next = head
+        cur = dummy
+
+        # 一下子要看两个，所以是
+        while cur.next and cur.next.next:
+            if cur.next.val == cur.next.next.val:
+                # 删除的起点至少是 cur.next.next
+                del_node = cur.next.next
+
+                while del_node.next and del_node.val == del_node.next.val:
+                    del_node = del_node.next
+                # 来到了一个新的结点，值不同
+
+                cur.next = del_node.next
+                del_node.next = None
+            else:
+                cur = cur.next
+
+        return dummy.next
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    public ListNode(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException(&quot;arr can not be empty&quot;);
+        }
+        this.val = arr[0];
+        ListNode cur = this;
+        for (int i = 1; i &lt; arr.length; i++) {
+            cur.next = new ListNode(arr[i]);
+            cur = cur.next;
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        ListNode cur = this;
+        while (cur != null) {
+            s.append(cur.val + &quot; -&gt; &quot;);
+            cur = cur.next;
+        }
+        s.append(&quot;NULL&quot;);
+        return s.toString();
+    }
+}
+
+public class Solution {
+    public ListNode deleteDuplication(ListNode pHead) {
+        ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = pHead;
+        ListNode curNode = dummyNode;
+        while (curNode.next != null &amp;&amp; curNode.next.next != null) {
+            ListNode next = curNode.next;
+            ListNode nextNext = next.next;
+            if (next.val == nextNext.val) {
+                while (nextNext.next != null &amp;&amp; nextNext.val == nextNext.next.val) {
+                    nextNext = nextNext.next;
+                }
+                ListNode delNode = nextNext;
+                curNode.next = delNode.next;
+                delNode.next = null;
+            } else {
+                curNode = curNode.next;
+            }
+        }
+        return dummyNode.next;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1, 2, 3, 3, 4, 4, 5};
+        ListNode head = new ListNode(nums);
+        System.out.println(head);
+
+        Solution solution = new Solution();
+        ListNode deleteDuplication = solution.deleteDuplication(head);
+        System.out.println(deleteDuplication);
+    }
+}
+</code></pre>
+<h3 id="leetcode-82-ii">LeetCode 第 82 题： 删除排序链表中的重复元素 II</h3>
+<p>传送门：<a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">82. 删除排序链表中的重复元素 II</a>。</p>
+<blockquote>
+<p>给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中 <em>没有重复出现</em> 的数字。</p>
+<p><strong>示例 1:</strong></p>
+<p>输入: <code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code>
+输出: <code>1-&gt;2-&gt;5</code></p>
+<p><strong>示例 2:</strong></p>
+<p>输入: <code>1-&gt;1-&gt;1-&gt;2-&gt;3</code>
+输出: <code>2-&gt;3</code></p>
+</blockquote>
+<p>Java 代码：</p>
+<pre><code class="language-java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+       if (head == null) {
+            return null;
+        }
+        // 只要涉及头结点的操作，我们都设立虚拟头结点
+        ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = head;
+        ListNode curNode = dummyNode;
+        while (curNode.next != null &amp;&amp; curNode.next.next != null) {
+            // 如果接连两个结点的 val 相等，至少要把它们都删掉
+            if (curNode.next.val == curNode.next.next.val) {
+                // 要删除的起点至少应该是当前判断相同的结点的第 2 个
+                ListNode delNode = curNode.next.next;
+                // 如果后面还有相同的结点，delNode 后移一位，即 delNode 应该是指向相同的结点的最后一个
+                while (delNode.next != null &amp;&amp; delNode.next.val == delNode.val) {
+                    delNode = delNode.next;
+                }
+                curNode.next = delNode.next;
+                delNode.next = null;
+            } else {
+                curNode = curNode.next;
+            }
+        }
+        return dummyNode.next; 
+    }
+}
+</code></pre>
+<h3 id="leetcode-83">LeetCode 第 83 题： 删除排序链表中的重复元素</h3>
+<p>传送门：<a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/description/">83. 删除排序链表中的重复元素</a>。</p>
+<blockquote>
+<p>给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</p>
+<p><strong>示例 1:</strong></p>
+<p><code>输入: 1-&gt;1-&gt;2
+输出: 1-&gt;2</code></p>
+<p><strong>示例 2:</strong></p>
+<p><code>输入: 1-&gt;1-&gt;2-&gt;3-&gt;3
+输出: 1-&gt;2-&gt;3</code></p>
+</blockquote>
+<p>Java 代码：</p>
+<pre><code class="language-java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode curNode = head;
+        while (curNode != null &amp;&amp; curNode.next != null) {
+            if (curNode.val == curNode.next.val) {
+                ListNode delNode = curNode.next;
+                // 继续向前找，看看，还有没有可以删除的结点
+                while (delNode.next != null &amp;&amp; delNode.next.val == delNode.val) {
+                    delNode = delNode.next;
+                }
+                // 穿针引线
+                curNode.next = delNode.next;
+                delNode.next = null;
+            } else {
+                curNode = curNode.next;
+            }
+        }
+        return head;
+    }
+}
+</code></pre>
+<h3 id="19">第 19 题：正则表达式匹配</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/28/">正则表达式匹配</a>，<a href="https://www.nowcoder.com/practice/45327ae22b7b413ea21df13ee7d6429c?tpId=13&amp;tqId=11205&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>请实现一个函数用来匹配包括<code>'.'</code>和<code>'*'</code>的正则表达式。</p>
+<p>模式中的字符<code>'.'</code>表示任意一个字符，而<code>'*'</code>表示它前面的字符可以出现任意次（含0次）。</p>
+<p>在本题中，匹配是指字符串的所有字符匹配整个模式。</p>
+<p>例如，字符串<code>"aaa"</code>与模式<code>"a.a"</code>和<code>"ab*ac*a"</code>匹配，但是与<code>"aa.a"</code>和<code>"ab*a"</code>均不匹配。</p>
+<p>样例：</p>
+<p>```
+输入：</p>
+<p>s="aa"
+p="a*"</p>
+<p>输出:true
+```</p>
+</blockquote>
+<p>思路：这题考察的是动态规划。笔记我写在这里了：<a href="https://www.jianshu.com/p/0130b5a5e81e">《剑指 Offer》（第 2 版）第 19 题：正则表达式匹配</a>。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+
+    # 状态：dp[i][j] 表示 s 中前 i 个字符与 p 的前 j 个字符组成的表示式是否匹配
+    # i 和 j 表示个数
+    # 代码中出现 i 均表示 s 中的索引或者个数
+    # 代码中出现 j 均表示 p 中的索引或者个数
+    # 出现 -1 都表示当前考虑的
+    # 出现 -2 都表示当前再前一个
+
+    # 参考资料：http://www.voidcn.com/article/p-zioiffqq-mm.html
+
+    def isMatch(self, s, p):
+        &quot;&quot;&quot;
+        :type s: str
+        :type p: str
+        :rtype: bool
+        &quot;&quot;&quot;
+        n = len(s)
+        m = len(p)
+
+        dp = [[False for _ in range(m + 1)] for _ in range(n + 1)]
+
+        # 当 s 和 p 的长度都为 0 的时候，定义成匹配
+        dp[0][0] = True
+
+        # 特判
+        for j in range(2, m + 1):
+            if p[j - 1] == '*' and dp[0][j - 2]:
+                dp[0][j] = True
+
+        # 下面分别对字符串 s 和模式串 p 进行匹配
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+
+                if s[i - 1] == p[j - 1] or p[j - 1] == '.':
+                    dp[i][j] = dp[i - 1][j - 1]
+                elif p[j - 1] == '*':
+                    # 这是最麻烦的情况
+
+                    if p[j - 2] != s[i - 1] and p[j - 2] != '.':
+                        # 例子：s a
+                        #        j-1
+                        #      p b    *
+                        #        j-2  j-1
+                        # 此时只能把 * 当成 0 次，即 * 和它之前的字母不出现，所以一下子要减去 2
+                        # p[j - 2] != '.' 这一点别忘了
+                        # 不能匹配
+                        dp[i][j] = dp[i][j - 2]
+                    else:
+                        # 接下来是可以匹配
+                        # 例子：s a
+                        #        j-1
+                        #      p .    *
+                        #        j-2  j-1
+                        # 此时把 * 当成 0 次，
+                        # 此时把 * 当成 1 次，
+                        # 此时把 * 当成 多 次，直接把 i - 1 ，这是最难的地方
+                        dp[i][j] = dp[i][j - 2] or dp[i][j - 1] or dp[i - 1][j]
+        return dp[n][m]
+</code></pre>
+<hr />
+<p>方法2：递归的写法。</p>
+<p>参考资料：一个网红的解法：http://www.cnblogs.com/grandyang/p/4461713.html。有解法 1 还有解法2。</p>
+<p><img alt="image-20190125154510545" src="https://ws3.sinaimg.cn/large/006tNc79ly1fzivl264vtj313w0oq46i.jpg" /></p>
+<p>网红写法：https://blog.csdn.net/hk2291976/article/details/51165010</p>
+<p>说明：这个网红还写了 leetbook。</p>
+<p><img alt="image-20190125154654023" src="https://ws1.sinaimg.cn/large/006tNc79ly1fzivmsycvaj32860s47b9.jpg" /></p>
+<p>参考资料：https://zhuanlan.zhihu.com/p/37647267。</p>
+<p>采用递归的解题方法，递归的终止条件是：</p>
+<p>1、如果 $s$ 和 $p$ 都只有一个字符，相等的充要条件是，它们相等，或者 $p$ 是 <code>'.'</code>；</p>
+<p>其他递归情况：</p>
+<p>1、如果 $p$ 的第二个字符不是 <code>'*'</code>，那么如果 $s$ 是空，返回 <code>false</code>，如果 $s[0]$ 和 $p[0]$ 能匹配上，那么递归 <code>s.substr(1), p.substr(1)</code>；</p>
+<p>==坏就坏在，如果 $p$ 的第二个字符是 <code>'*'</code>==。</p>
+<p>2、如果 $p$ 的第二个字符是 <strong>'*'</strong>，因为我们知道 '<em>' 可以代表 '</em>' 之前的元素个数是 $0$ 个或者 $1$ 个或者多个，所以如果 $s$ 的前 $k$ 个元素个 $p[0]$ 一样，那么它们有可能都被匹配到，也有可能一个都不会被匹配上。</p>
+<p>C++ 写法：</p>
+<pre><code class="language-c++">class Solution {
+public:
+    bool isMatch(string s, string p) {
+        if(p.empty())return s.empty();
+        if(p.size() == 1) {
+             return(s.size() == 1 &amp;&amp; (s[0] == p[0] || p[0] == '.'));
+        }
+
+        if(p[1] != '*')  {
+            if(s.empty())return false;
+            return (s[0] == p[0] || p[0] == '.')&amp;&amp; isMatch(s.substr(1), p.substr(1));
+        }
+        // 走到这里 p[1] == '*'，下面的 4 行代表比较难理解
+        while(!s.empty() &amp;&amp; (s[0] == p[0] || p[0] == '.')) {
+            if(isMatch(s, p.substr(2))) return true;
+            s = s.substr(1);
+        }
+        return isMatch(s, p.substr(2));
+    }
+};
+</code></pre>
+<p>要求：请实现一个函数用来匹配包括 <code>.</code> 和 <code>*</code> 的正则表达式。模式中的字符 <code>.</code> 表示任意一个字符，而 <code>*</code> 表示它前面的字符可以出现任意次，包括 $0$ 次。</p>
+<p>LeetCode 第 10 题，传送门：<a href="https://leetcode-cn.com/problems/regular-expression-matching/description/">10. 正则表达式匹配</a>，难度是：<strong>困难</strong>。</p>
+<p>使用动态规划：</p>
+<p><img alt="image-20190108003842166" src="https://ws3.sinaimg.cn/large/006tNc79ly1fyyhum1aunj30xg0lggwc.jpg" /></p>
+<p>dp 函数这么写。</p>
+<p><img alt="image-20190108004253180" src="https://ws3.sinaimg.cn/large/006tNc79ly1fyyhyybbgjj30r20c8wmm.jpg" /></p>
+<p>思路：当字符串只有一个字符时，直接进行判断，否则进入下面两种递归。</p>
+<p>两种递归情况：1、当模式中的第二个字符不是 <code>*</code> 时：</p>
+<p>（1）如果字符串第一个字符和模式中的第一个字符相匹配或是字符 <code>.</code> 那么字符串和模式都后移一个字符，然后匹配剩余 的；</p>
+<p>（2）如果字符串第一个字符和模式中的第一个字符相不匹配，直接返回 <code>false</code>。</p>
+<p>2、当模式中的第二个字符是 <code>*</code> 时：</p>
+<p>如果“字符串”第一个字符跟“模式串”第一个字符不匹配，则模式后移 $2$ 个字符，继续匹配；</p>
+<p>如果“字符串”第一个字符跟“模式串”第一个字符匹配或是字符 <code>.</code> ，可以有 $3$ 种匹配方式：</p>
+<p>（1）模式后移 $2$ 字符，相当于 <code>x</code> 被忽略；</p>
+<p>（2）字符串后移  $1$ 字符，模式后移 $2$ 字符；</p>
+<p>（3）字符串后移 $1$ 字符，模式不变，即继续匹配字符下一位，因为可以匹配多位。</p>
+<p><img alt="image-20190107154329317" src="https://ws4.sinaimg.cn/large/006tNc79ly1fyy2dqxjh2j31cm0tc78b.jpg" /></p>
+<p><img alt="image-20190107154342220" src="https://ws2.sinaimg.cn/large/006tNc79ly1fyy2dyvq77j31940u0wkl.jpg" /></p>
+<h3 id="20">第 20 题：表示数值的字符串</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/description/29/"> 表示数值的字符串</a>，<a href="https://www.nowcoder.com/practice/6f8c901d091949a5837e24bb82a731f2?tpId=13&amp;tqId=11206&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。</p>
+<p>例如，字符串<code>"+100"</code>,<code>"5e2"</code>,<code>"-123"</code>,<code>"3.1416"</code>和<code>"-1E-16"</code>都表示数值。</p>
+<p>但是<code>"12e"</code>,<code>"1a3.14"</code>,<code>"1.2.3"</code>,<code>"+-5"</code>和<code>"12e+4.3"</code>都不是。</p>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>小数可以没有整数部分，例如.123等于0.123；</li>
+<li>小数点后面可以没有数字，例如233.等于233.0；</li>
+<li>小数点前面和后面可以有数字，例如233.666;</li>
+<li>当e或E前面没有数字时，整个字符串不能表示数字，例如.e1、e1；</li>
+<li>当e或E后面没有整数时，整个字符串不能表示数字，例如12e、12e+5.4;</li>
+</ol>
+<p>样例：</p>
+<p>输入: "0"</p>
+<p>输出: true</p>
+</blockquote>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def isNumber(self, s):
+        &quot;&quot;&quot;
+        :type s: str
+        :rtype: bool
+        &quot;&quot;&quot;
+        size = len(s)
+
+        # 1、去掉多余的空格
+        i = 0
+        while i &lt; size and s[i] == ' ':
+            i += 1
+
+        j = size - 1
+        while j &gt;= 0 and s[j] == ' ':
+            j -= 1
+        if i &gt; j:
+            return False
+
+        s = s[i:j - i + 1]
+
+        # 2、首字母可以是加号或者减号
+        if s[0] == '+' or s[0] == '-':
+            s = s[1:]
+
+        if len(s) == 0:
+            return False
+        # 3、只有 1 个点，不行
+        if len(s) == 1 and s[0] == '.':
+            return False
+                # 4、下面对点的个数和 e 的个数展开讨论
+
+        # 点的个数
+        dot_cnt = 0
+        # e 的个数
+        e_cnt = 0
+
+        size = len(s)
+        i = -1
+        while i &lt; size - 1:
+            i += 1
+            if '0' &lt;= s[i] &lt;= '9':
+                continue
+            elif s[i] == '.':
+                dot_cnt += 1
+                # 如果没有 e，并且点的数量大于 1，不符合要求
+                if e_cnt or dot_cnt &gt; 1:
+                    return False
+            elif s[i] == 'e' or s[i] == 'E':
+                e_cnt += 1
+                if i == 0 or i == size - 1 or e_cnt &gt; 1:
+                    return False
+                # '.' 后面不能加上
+                if i == 1 and s[0] == '.':
+                    return False
+                if s[i + 1] == '+' or s[i + 1] == '-':
+                    if i + 2 == size:
+                        return False
+                    i += 1
+            else:
+                return False
+        return True
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    s = '123.45e+6'
+    result = solution.isNumber(s)
+    print(result)
+</code></pre>
+<p>“大雪菜”的解法：https://www.acwing.com/solution/acwing/content/737/。</p>
+<p>C++ 代码：</p>
+<p><img alt="image-20190108005159319" src="https://ws3.sinaimg.cn/large/006tNc79ly1fyyi8g5kfkj31j40tix3l.jpg" /></p>
+<p>C++ 代码：</p>
+<pre><code class="language-c++">class Solution {
+public:
+    bool isNumber(string s) {
+        int i = 0;
+        while (i &lt; s.size() &amp;&amp; s[i] == ' ') i ++ ;
+        int j = s.size() - 1;
+        while (j &gt;= 0 &amp;&amp; s[j] == ' ') j -- ;
+        if (i &gt; j) return false;
+        s = s.substr(i, j - i + 1);
+
+        if (s[0] == '-' || s[0] == '+') s = s.substr(1);
+        if (s.empty() || s[0] == '.' &amp;&amp; s.size() == 1) return false;
+
+        int dot = 0, e = 0;
+        for (int i = 0; i &lt; s.size(); i ++ )
+        {
+            if (s[i] &gt;= '0' &amp;&amp; s[i] &lt;= '9');
+            else if (s[i] == '.')
+            {
+                dot ++ ;
+                if (e || dot &gt; 1) return false;
+            }
+            else if (s[i] == 'e' || s[i] == 'E')
+            {
+                e ++ ;
+                if (i + 1 == s.size() || !i || e &gt; 1 || i == 1 &amp;&amp; s[0] == '.') return false;
+                if (s[i + 1] == '+' || s[i + 1] == '-')
+                {
+                    if (i + 2 == s.size()) return false;
+                    i ++ ;
+                }
+            }
+            else return false;
+        }
+        return true;
+    }
+};
+
+
+</code></pre>
+<p>作者：yxc
+链接：https://www.acwing.com/solution/acwing/content/737/
+来源：AcWing
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>（本节完）</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

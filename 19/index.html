@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>剑指 Offer 19. 正则表达式匹配 - 《剑指 Offer》（第 2 版）</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u5251\u6307 Offer 19. \u6b63\u5219\u8868\u8fbe\u5f0f\u5339\u914d";
+    var mkdocs_page_input_path = "19.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 《剑指 Offer》（第 2 版）</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 1 - 20 题</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../03/">剑指 Offer 03. 数组中重复的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04/">剑指 Offer 04. 二维数组中的查找</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05/">剑指 Offer 05. 替换空格</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06/">剑指 Offer 06. 从尾到头打印链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../07/">剑指 Offer 07. 重建二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08/">剑指 Offer 08. 二叉树的下一个结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../09/">剑指 Offer 09. 用两个栈实现队列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-1/">剑指 Offer 10- I. 斐波那契数列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-2/">剑指 Offer 10- II. 青蛙跳台阶问题</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../11/">剑指 Offer 11. 旋转数组的最小数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../12/">剑指 Offer 12. 矩阵中的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../13/">剑指 Offer 13. 机器人的运动范围</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-1/">剑指 Offer 14- I. 剪绳子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-2/">剑指 Offer 14- II. 剪绳子 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../15/">剑指 Offer 15. 二进制中1的个数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../16/">剑指 Offer 16. 数值的整数次方</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../17/">剑指 Offer 17. 打印从1到最大的n位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../18/">剑指 Offer 18. 删除链表的节点</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">剑指 Offer 19. 正则表达式匹配</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#19">第 19 题：正则表达式匹配</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../20/">剑指 Offer 20. 表示数值的字符串</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 21 - 40 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../21/">剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../22/">剑指 Offer 22. 链表中倒数第k个节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../24/">剑指 Offer 24. 反转链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../25/">剑指 Offer 25. 合并两个排序的链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../26/">剑指 Offer 26. 树的子结构</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../27/">剑指 Offer 27. 二叉树的镜像</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../28/">剑指 Offer 28. 对称的二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../29/">剑指 Offer 29. 顺时针打印矩阵</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../30/">剑指 Offer 30. 包含min函数的栈</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../31/">剑指 Offer 31. 栈的压入、弹出序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-1/">剑指 Offer 32 - I. 从上到下打印二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-2/">剑指 Offer 32 - II. 从上到下打印二叉树 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-3/">剑指 Offer 32 - III. 从上到下打印二叉树 III</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../33/">剑指 Offer 33. 二叉搜索树的后序遍历序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../34/">剑指 Offer 34. 二叉树中和为某一值的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../35/">剑指 Offer 35. 复杂链表的复制</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../36/">剑指 Offer 36. 二叉搜索树与双向链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../37/">剑指 Offer 37. 序列化二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../38/">剑指 Offer 38. 字符串的排列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../39/">剑指 Offer 39. 数组中出现次数超过一半的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../40/">剑指 Offer 40. 最小的k个数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 41 - 60 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../41/">剑指 Offer 41. 数据流中的中位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../42/">剑指 Offer 42. 连续子数组的最大和</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../43/">剑指 Offer 43. 1～n 整数中 1 出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../44/">剑指 Offer 44. 数字序列中某一位的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../45/">剑指 Offer 45. 把数组排成最小的数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../46/">剑指 Offer 46. 把数字翻译成字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../47/">剑指 Offer 47. 礼物的最大价值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../48/">剑指 Offer 48. 最长不含重复字符的子字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../49/">剑指 Offer 49. 丑数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../50/">剑指 Offer 50. 第一个只出现一次的字符</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../51/">剑指 Offer 51. 数组中的逆序对</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../52/">剑指 Offer 52. 两个链表的第一个公共节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53/">剑指 Offer 53 - I. 在排序数组中查找数字 I</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53-2/">剑指 Offer 53 - II. 0～n-1中缺失的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../54/">剑指 Offer 54. 二叉搜索树的第k大节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55/">剑指 Offer 55 - I. 二叉树的深度</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55-2/">剑指 Offer 55 - II. 平衡二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56/">剑指 Offer 56 - I. 数组中数字出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56-2/">剑指 Offer 56 - II. 数组中数字出现的次数 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57/">剑指 Offer 57. 和为s的两个数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57-2/">剑指 Offer 57 - II. 和为s的连续正数序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58/">剑指 Offer 58 - I. 翻转单词顺序</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58-2/">剑指 Offer 58 - II. 左旋转字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../59/">剑指 Offer 59 - I. 滑动窗口的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../59-2/">剑指 Offer 59 - II. 队列的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../60/">剑指 Offer 60. n个骰子的点数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 61 - 68 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../61/">剑指 Offer 61. 扑克牌中的顺子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../62/">剑指 Offer 62. 圆圈中最后剩下的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../63/">剑指 Offer 63. 股票的最大利润</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../64/">剑指 Offer 64. 求1+2+…+n</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../65/">剑指 Offer 65. 不用加减乘除做加法</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../66/">剑指 Offer 66. 构建乘积数组</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../67/">剑指 Offer 67. 把字符串转换成整数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68/">剑指 Offer 68 - I. 二叉搜索树的最近公共祖先</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68-2/">剑指 Offer 68 - II. 二叉树的最近公共祖先</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">《剑指 Offer》（第 2 版）</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>第 1 - 20 题 &raquo;</li>
+        
+      
+    
+    <li>剑指 Offer 19. 正则表达式匹配</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="offer-19">剑指 Offer 19. 正则表达式匹配</h1>
+<ul>
+<li>力扣：<a href="https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/">剑指 Offer 19. 正则表达式匹配</a>；</li>
+</ul>
+<h3 id="19">第 19 题：正则表达式匹配</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/28/">正则表达式匹配</a>，<a href="https://www.nowcoder.com/practice/45327ae22b7b413ea21df13ee7d6429c?tpId=13&amp;tqId=11205&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>请实现一个函数用来匹配包括<code>'.'</code>和<code>'*'</code>的正则表达式。</p>
+<p>模式中的字符<code>'.'</code>表示任意一个字符，而<code>'*'</code>表示它前面的字符可以出现任意次（含0次）。</p>
+<p>在本题中，匹配是指字符串的所有字符匹配整个模式。</p>
+<p>例如，字符串<code>"aaa"</code>与模式<code>"a.a"</code>和<code>"ab*ac*a"</code>匹配，但是与<code>"aa.a"</code>和<code>"ab*a"</code>均不匹配。</p>
+<p>样例：</p>
+<p>```
+输入：</p>
+<p>s="aa"
+p="a*"</p>
+<p>输出:true
+```</p>
+</blockquote>
+<p>思路：这题考察的是动态规划。笔记我写在这里了：<a href="https://www.jianshu.com/p/0130b5a5e81e">《剑指 Offer》（第 2 版）第 19 题：正则表达式匹配</a>。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+
+    # 状态：dp[i][j] 表示 s 中前 i 个字符与 p 的前 j 个字符组成的表示式是否匹配
+    # i 和 j 表示个数
+    # 代码中出现 i 均表示 s 中的索引或者个数
+    # 代码中出现 j 均表示 p 中的索引或者个数
+    # 出现 -1 都表示当前考虑的
+    # 出现 -2 都表示当前再前一个
+
+    # 参考资料：http://www.voidcn.com/article/p-zioiffqq-mm.html
+
+    def isMatch(self, s, p):
+        &quot;&quot;&quot;
+        :type s: str
+        :type p: str
+        :rtype: bool
+        &quot;&quot;&quot;
+        n = len(s)
+        m = len(p)
+
+        dp = [[False for _ in range(m + 1)] for _ in range(n + 1)]
+
+        # 当 s 和 p 的长度都为 0 的时候，定义成匹配
+        dp[0][0] = True
+
+        # 特判
+        for j in range(2, m + 1):
+            if p[j - 1] == '*' and dp[0][j - 2]:
+                dp[0][j] = True
+
+        # 下面分别对字符串 s 和模式串 p 进行匹配
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+
+                if s[i - 1] == p[j - 1] or p[j - 1] == '.':
+                    dp[i][j] = dp[i - 1][j - 1]
+                elif p[j - 1] == '*':
+                    # 这是最麻烦的情况
+
+                    if p[j - 2] != s[i - 1] and p[j - 2] != '.':
+                        # 例子：s a
+                        #        j-1
+                        #      p b    *
+                        #        j-2  j-1
+                        # 此时只能把 * 当成 0 次，即 * 和它之前的字母不出现，所以一下子要减去 2
+                        # p[j - 2] != '.' 这一点别忘了
+                        # 不能匹配
+                        dp[i][j] = dp[i][j - 2]
+                    else:
+                        # 接下来是可以匹配
+                        # 例子：s a
+                        #        j-1
+                        #      p .    *
+                        #        j-2  j-1
+                        # 此时把 * 当成 0 次，
+                        # 此时把 * 当成 1 次，
+                        # 此时把 * 当成 多 次，直接把 i - 1 ，这是最难的地方
+                        dp[i][j] = dp[i][j - 2] or dp[i][j - 1] or dp[i - 1][j]
+        return dp[n][m]
+</code></pre>
+<hr />
+<p>方法2：递归的写法。</p>
+<p>参考资料：一个网红的解法：http://www.cnblogs.com/grandyang/p/4461713.html。有解法 1 还有解法2。</p>
+<p><img alt="19-1" src="https://liweiwei1419.github.io/images/sword-for-offer/19-1.jpg" /></p>
+<p>网红写法：https://blog.csdn.net/hk2291976/article/details/51165010</p>
+<p>说明：这个网红还写了 leetbook。</p>
+<p><img alt="19-2" src="https://liweiwei1419.github.io/images/sword-for-offer/19-2.jpg" /></p>
+<p>参考资料：https://zhuanlan.zhihu.com/p/37647267。</p>
+<p>采用递归的解题方法，递归的终止条件是：</p>
+<p>1、如果 $s$ 和 $p$ 都只有一个字符，相等的充要条件是，它们相等，或者 $p$ 是 <code>'.'</code>；</p>
+<p>其他递归情况：</p>
+<p>1、如果 $p$ 的第二个字符不是 <code>'*'</code>，那么如果 $s$ 是空，返回 <code>false</code>，如果 $s[0]$ 和 $p[0]$ 能匹配上，那么递归 <code>s.substr(1), p.substr(1)</code>；</p>
+<p>==坏就坏在，如果 $p$ 的第二个字符是 <code>'*'</code>==。</p>
+<p>2、如果 $p$ 的第二个字符是 <strong>'*'</strong>，因为我们知道 '<em>' 可以代表 '</em>' 之前的元素个数是 $0$ 个或者 $1$ 个或者多个，所以如果 $s$ 的前 $k$ 个元素个 $p[0]$ 一样，那么它们有可能都被匹配到，也有可能一个都不会被匹配上。</p>
+<p>C++ 写法：</p>
+<pre><code class="language-c++">class Solution {
+public:
+    bool isMatch(string s, string p) {
+        if(p.empty())return s.empty();
+        if(p.size() == 1) {
+             return(s.size() == 1 &amp;&amp; (s[0] == p[0] || p[0] == '.'));
+        }
+
+        if(p[1] != '*')  {
+            if(s.empty())return false;
+            return (s[0] == p[0] || p[0] == '.')&amp;&amp; isMatch(s.substr(1), p.substr(1));
+        }
+        // 走到这里 p[1] == '*'，下面的 4 行代表比较难理解
+        while(!s.empty() &amp;&amp; (s[0] == p[0] || p[0] == '.')) {
+            if(isMatch(s, p.substr(2))) return true;
+            s = s.substr(1);
+        }
+        return isMatch(s, p.substr(2));
+    }
+};
+</code></pre>
+<p>要求：请实现一个函数用来匹配包括 <code>.</code> 和 <code>*</code> 的正则表达式。模式中的字符 <code>.</code> 表示任意一个字符，而 <code>*</code> 表示它前面的字符可以出现任意次，包括 $0$ 次。</p>
+<p>LeetCode 第 10 题，传送门：<a href="https://leetcode-cn.com/problems/regular-expression-matching/description/">10. 正则表达式匹配</a>，难度是：<strong>困难</strong>。</p>
+<p>使用动态规划：</p>
+<p><img alt="19-3" src="https://liweiwei1419.github.io/images/sword-for-offer/19-3.jpg" /></p>
+<p>dp 函数这么写。</p>
+<p><img alt="19-4" src="https://liweiwei1419.github.io/images/sword-for-offer/19-4.jpg" /></p>
+<p>思路：当字符串只有一个字符时，直接进行判断，否则进入下面两种递归。</p>
+<p>两种递归情况：1、当模式中的第二个字符不是 <code>*</code> 时：</p>
+<p>（1）如果字符串第一个字符和模式中的第一个字符相匹配或是字符 <code>.</code> 那么字符串和模式都后移一个字符，然后匹配剩余 的；</p>
+<p>（2）如果字符串第一个字符和模式中的第一个字符相不匹配，直接返回 <code>false</code>。</p>
+<p>2、当模式中的第二个字符是 <code>*</code> 时：</p>
+<p>如果“字符串”第一个字符跟“模式串”第一个字符不匹配，则模式后移 $2$ 个字符，继续匹配；</p>
+<p>如果“字符串”第一个字符跟“模式串”第一个字符匹配或是字符 <code>.</code> ，可以有 $3$ 种匹配方式：</p>
+<p>（1）模式后移 $2$ 字符，相当于 <code>x</code> 被忽略；</p>
+<p>（2）字符串后移  $1$ 字符，模式后移 $2$ 字符；</p>
+<p>（3）字符串后移 $1$ 字符，模式不变，即继续匹配字符下一位，因为可以匹配多位。</p>
+<p><img alt="19-5" src="https://liweiwei1419.github.io/images/sword-for-offer/19-5.jpg" /></p>
+<p><img alt="19-6" src="https://liweiwei1419.github.io/images/sword-for-offer/19-6.jpg" /></p>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [['$','$'], ['\\(','\\)']],
+  processEscapes: true
+  },
+displayAlign : "left",
+TeX: {
+        equationNumbers: {
+            autoNumber: "all",
+            useLabelIds: true
+        }
+    },
+    "HTML-CSS": {
+        linebreaks: {
+            automatic: true
+        },
+        scale: 100,
+        styles: {
+          ".MathJax_Display": {
+            "text-align": "left",
+            "width" : "auto",
+            "margin": "10px 0px 10px 0px !important",
+            "background-color": "#f5f5f5 !important",
+            "border-radius": "3px !important",
+            border:  "1px solid #ccc !important",
+            padding: "5px 5px 5px 5px !important"
+          },
+          ".MathJax": {
+            "background-color": "#f5f5f5 !important",
+            padding: "2px 2px 2px 2px !important"
+          }
+        }
+    },
+    SVG: {
+        linebreaks: {
+            automatic: true
+        }
+    }
+});
+</script>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../20/" class="btn btn-neutral float-right" title="剑指 Offer 20. 表示数值的字符串">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../18/" class="btn btn-neutral" title="剑指 Offer 18. 删除链表的节点"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../18/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../20/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

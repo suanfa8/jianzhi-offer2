@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>61 68 - 《剑指 Offer》（第 2 版）</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "61 68";
+    var mkdocs_page_input_path = "61-68.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 《剑指 Offer》（第 2 版）</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 1 - 20 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../03/">剑指 Offer 03. 数组中重复的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04/">剑指 Offer 04. 二维数组中的查找</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05/">剑指 Offer 05. 替换空格</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06/">剑指 Offer 06. 从尾到头打印链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../07/">剑指 Offer 07. 重建二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08/">剑指 Offer 08. 二叉树的下一个结点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../09/">剑指 Offer 09. 用两个栈实现队列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-1/">剑指 Offer 10- I. 斐波那契数列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../10-2/">剑指 Offer 10- II. 青蛙跳台阶问题</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../11/">剑指 Offer 11. 旋转数组的最小数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../12/">剑指 Offer 12. 矩阵中的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../13/">剑指 Offer 13. 机器人的运动范围</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-1/">剑指 Offer 14- I. 剪绳子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../14-2/">剑指 Offer 14- II. 剪绳子 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../15/">剑指 Offer 15. 二进制中1的个数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../16/">剑指 Offer 16. 数值的整数次方</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../17/">剑指 Offer 17. 打印从1到最大的n位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../18/">剑指 Offer 18. 删除链表的节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../19/">剑指 Offer 19. 正则表达式匹配</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../20/">剑指 Offer 20. 表示数值的字符串</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 21 - 40 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../21/">剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../22/">剑指 Offer 22. 链表中倒数第k个节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../24/">剑指 Offer 24. 反转链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../25/">剑指 Offer 25. 合并两个排序的链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../26/">剑指 Offer 26. 树的子结构</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../27/">剑指 Offer 27. 二叉树的镜像</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../28/">剑指 Offer 28. 对称的二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../29/">剑指 Offer 29. 顺时针打印矩阵</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../30/">剑指 Offer 30. 包含min函数的栈</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../31/">剑指 Offer 31. 栈的压入、弹出序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-1/">剑指 Offer 32 - I. 从上到下打印二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-2/">剑指 Offer 32 - II. 从上到下打印二叉树 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../32-3/">剑指 Offer 32 - III. 从上到下打印二叉树 III</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../33/">剑指 Offer 33. 二叉搜索树的后序遍历序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../34/">剑指 Offer 34. 二叉树中和为某一值的路径</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../35/">剑指 Offer 35. 复杂链表的复制</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../36/">剑指 Offer 36. 二叉搜索树与双向链表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../37/">剑指 Offer 37. 序列化二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../38/">剑指 Offer 38. 字符串的排列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../39/">剑指 Offer 39. 数组中出现次数超过一半的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../40/">剑指 Offer 40. 最小的k个数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 41 - 60 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../41/">剑指 Offer 41. 数据流中的中位数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../42/">剑指 Offer 42. 连续子数组的最大和</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../43/">剑指 Offer 43. 1～n 整数中 1 出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../44/">剑指 Offer 44. 数字序列中某一位的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../45/">剑指 Offer 45. 把数组排成最小的数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../46/">剑指 Offer 46. 把数字翻译成字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../47/">剑指 Offer 47. 礼物的最大价值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../48/">剑指 Offer 48. 最长不含重复字符的子字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../49/">剑指 Offer 49. 丑数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../50/">剑指 Offer 50. 第一个只出现一次的字符</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../51/">剑指 Offer 51. 数组中的逆序对</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../52/">剑指 Offer 52. 两个链表的第一个公共节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53/">剑指 Offer 53 - I. 在排序数组中查找数字 I</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../53-2/">剑指 Offer 53 - II. 0～n-1中缺失的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../54/">剑指 Offer 54. 二叉搜索树的第k大节点</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55/">剑指 Offer 55 - I. 二叉树的深度</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../55-2/">剑指 Offer 55 - II. 平衡二叉树</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56/">剑指 Offer 56 - I. 数组中数字出现的次数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../56-2/">剑指 Offer 56 - II. 数组中数字出现的次数 II</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57/">剑指 Offer 57. 和为s的两个数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../57-2/">剑指 Offer 57 - II. 和为s的连续正数序列</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58/">剑指 Offer 58 - I. 翻转单词顺序</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../58-2/">剑指 Offer 58 - II. 左旋转字符串</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../59/">剑指 Offer 59 - I. 滑动窗口的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../59-2/">剑指 Offer 59 - II. 队列的最大值</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../60/">剑指 Offer 60. n个骰子的点数</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">第 61 - 68 题</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../61/">剑指 Offer 61. 扑克牌中的顺子</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../62/">剑指 Offer 62. 圆圈中最后剩下的数字</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../63/">剑指 Offer 63. 股票的最大利润</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../64/">剑指 Offer 64. 求1+2+…+n</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../65/">剑指 Offer 65. 不用加减乘除做加法</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../66/">剑指 Offer 66. 构建乘积数组</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../67/">剑指 Offer 67. 把字符串转换成整数</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68/">剑指 Offer 68 - I. 二叉搜索树的最近公共祖先</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../68-2/">剑指 Offer 68 - II. 二叉树的最近公共祖先</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">《剑指 Offer》（第 2 版）</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>61 68</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p>61-68</p>
+<h1 id="offer-2-python-61-68">《剑指 Offer》（第 2 版） 题解（Python 语言实现）第 61-68 题</h1>
+<h3 id="61">第 61 题：扑克牌顺子（掌握位运算占位的技巧）</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/77/">扑克牌的顺子</a>。</p>
+<blockquote>
+<p>从扑克牌中随机抽 5 张牌，判断是不是一个顺子，即这 5 张牌是不是连续的。</p>
+<p>2～10 为数字本身，A 为 1 ，J 为 11，Q 为 12，K 为 13，大小王可以看做任意数字。</p>
+<p>为了方便，大小王均以0来表示，并且假设这副牌中大小王均有两张。</p>
+<p>样例1：</p>
+<p>输入：<code>[8,9,10,11,12]</code></p>
+<p>输出：true</p>
+<p>样例2：</p>
+<p>输入：<code>[0,8,9,11,12]</code></p>
+<p>输出：true</p>
+</blockquote>
+<p>思路：基本思路就是把不符合题目要求的情况全部排除掉，剩下的就是正确的了。</p>
+<p>python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def isContinuous(self, numbers):
+        &quot;&quot;&quot;
+        :type numbers: List[int]
+        :rtype: bool
+        &quot;&quot;&quot;
+        size = len(numbers)
+        if size != 5:
+            return False
+        # 最小值和最大值都设置成一个不可能取到的值
+        min_val = 14
+        max_val = -1
+
+        flag = 0
+        for num in numbers:
+            if not 0 &lt;= num &lt;= 13:
+                return False
+            if num == 0:
+                continue
+            # 右移：看看这一位是不是用过了
+            if (flag &gt;&gt; num) &amp; 1 == 1:
+                return False
+
+            # 左移：表示这一位我现在要占用
+            flag = flag | (1 &lt;&lt; num)
+
+            min_val = min(min_val, num)
+            max_val = max(max_val, num)
+            if max_val - min_val &gt;= 5:
+                return False
+        return True
+</code></pre>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution:
+    def IsContinuous(self, numbers):
+        # write code here
+        if len(numbers) &lt; 5:
+            return False
+        max_num = -1
+        min_num = 14
+        flag = 0
+        for number in numbers:
+            if number &lt; 0 or number &gt; 13:
+                return False
+            if number == 0:
+                continue
+            if (flag &gt;&gt; number) &amp; 1 == 1:
+                return False
+            flag |= 1 &lt;&lt; number
+            if number &lt; min_num:
+                min_num = number
+            if number &gt; max_num:
+                max_num = number
+            if max_num - min_num &gt;= 5:
+                return False
+        return True
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">import java.util.Arrays;
+
+public class Solution {
+
+    public boolean isContinuous(int[] numbers) {
+        int len = numbers.length;
+        if (len != 5) {
+            return false;
+        }
+        Arrays.sort(numbers);
+        // &quot;0&quot; 的个数
+        int zeroCount = 0;
+        // 当前数与后一个数的距离，距离为 1，表示是顺子
+        int diffDistance = 0;
+        for (int i = 0; i &lt; 4; i++) {
+            if (numbers[i] == 0) {
+                zeroCount++;
+                continue;
+            }
+            if (numbers[i] == numbers[i + 1]) {
+                return false;
+            } else {
+                diffDistance += (numbers[i + 1] - numbers[i] - 1);
+            }
+
+        }
+        return zeroCount &gt;= diffDistance;
+    }
+}
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">private boolean isOrderly(int[] number) {
+    //1、非空判断
+    if (number == null){
+        return false;
+    }
+
+    //2、计算 0 的个数
+    int zero = 0;
+    for (int num : number) {
+        if (num == 0) {
+            zero++;
+        }
+    }
+
+    //3、将数组排序
+    Arrays.sort(number);
+
+    //4、排序完成之后 从非零数据进行两两判断
+    int small = zero;
+    int big = small + 1;
+    int numberGap = 0;
+
+    //5、排除一种情况  相邻数据不相等情况
+    //进行循环的基础条件
+    while (big &lt; number.length) {
+        if (number[small] == number[big]) {
+            return false;//有对子的存在
+        }
+        //统计相邻之间的空格
+        numberGap += number[big] - number[small] - 1;
+        //所有的数据进行后移一位
+        small = big;
+        big++;
+    }
+    //判断所有的间隔与0的个数 小于或者等于则是有序的 否则则是无序的
+    return numberGap &lt;= zero;
+}
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">import java.util.Arrays;
+
+public class Solution {
+
+    public boolean isContinuous(int[] numbers) {
+        int len = numbers.length;
+        if (len != 5) {
+            return false;
+        }
+        Arrays.sort(numbers);
+        // &quot;0&quot; 的个数
+        int zeroCount = 0;
+        // 当前数与后一个数的距离，距离为 1，表示是顺子
+        int diffDistance = 0;
+        for (int i = 0; i &lt; 4; i++) {
+            if (numbers[i] == 0) {
+                zeroCount++;
+                continue;
+            }
+            if (numbers[i] == numbers[i + 1]) {
+                return false;
+            } else {
+                diffDistance += (numbers[i + 1] - numbers[i] - 1);
+            }
+
+        }
+        return zeroCount &gt;= diffDistance;
+    }
+}
+</code></pre>
+<h3 id="62">第 62 题：孩子们的游戏（圆圈中最后剩下的数）</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/78/">圆圈中最后剩下的数字</a>，<a href="https://www.nowcoder.com/practice/f78a359491e64a50bce2d89cff857eb6?tpId=13&amp;tqId=11199&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>0, 1, …, n-1 这 n 个数字 (n&gt;0) 排成一个圆圈，从数字 0 开始每次从这个圆圈里删除第 m 个数字。</p>
+<p>求出这个圆圈里剩下的最后一个数字。</p>
+<p>样例：</p>
+<p>输入：<code>n=5 , m=3</code></p>
+<p>输出：3</p>
+</blockquote>
+<p>思路1：使用环形链表模拟约瑟夫环。注意特例，即 $n==0$ 成立，没有数字的时候，返回  $ -1$ 即可。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 62 题：孩子们的游戏（圆圈中最后剩下的数）-1" src="http://upload-images.jianshu.io/upload_images/414598-ddc65bd3aae32a78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>Python 写法：记住这种写法，两个要点。</p>
+<pre><code class="language-python">class Solution:
+    def lastRemaining(self, n, m):
+        # 特判
+        if n == 0 and m == 0:
+            return -1
+
+        l = [i for i in range(n)]
+        bt = 0
+        while len(l) &gt; 1:
+
+            # 在这一行模拟约瑟夫环操作
+            # 1、m - 1 ：因为当前数字算 1 个，走 m - 1 步
+            # 2、len(l)：每次删去一个数，所以得动态取
+            bt = (bt + m - 1) % len(l)
+
+            l.pop(bt)
+        return l[0]
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">import java.util.LinkedList;
+
+public class Solution {
+    // 约瑟夫环问题
+    // 其实并不一定要构造出一个真的循环链表
+    public int LastRemaining_Solution(int n, int m) {
+        // 这里用链表是为了提升性能，如果用 ArrayList 在删除操作中，就会有大量的性能消耗
+        LinkedList&lt;Integer&gt; list = new LinkedList&lt;&gt;();
+        int bt = 0;
+        for (int i = 0; i &lt; n; i++) {
+            list.addLast(i);
+        }
+        while (list.size() &gt; 1) {
+            bt = (bt + m - 1) % list.size();
+            list.remove(bt);
+        }
+        // 思考为什么会有最后这个判断
+        return list.size() == 1 ? list.get(0) : -1;
+    }
+}
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">import java.util.LinkedList;
+
+public class Solution {
+    // 约瑟夫环问题
+    // 其实并不一定要构造出一个真的循环链表
+    public int LastRemaining_Solution(int n, int m) {
+        // 先处理极端输入
+        if (n &lt;= 1) {
+            return -1;
+        }
+        // 这里用链表是为了提升性能，如果用 ArrayList 在删除操作中，就会有大量的性能消耗
+        LinkedList&lt;Integer&gt; list = new LinkedList&lt;&gt;();
+        int bt = 0;
+        for (int i = 0; i &lt; n; i++) {
+            list.addLast(i);
+        }
+        while (list.size() &gt; 1) {
+            // 表示的是索引的值
+            bt = (bt + m - 1) % list.size();
+            // 下面这一行代码可以帮助调试
+            // System.out.println(bt + &quot; &quot; + list);
+            // bt 是链表的索引
+            list.remove(bt);
+        }
+        // 思考为什么会有最后这个判断
+        return list.get(0);
+    }
+
+    // 测试用例： n = 6，[0,1,2,3,4,5]，m=3
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int n = 6;
+        int m = 3;
+        int lastRemainingSolution = solution.LastRemaining_Solution(n, m);
+        System.out.println(lastRemainingSolution);
+    }
+}
+</code></pre>
+<p>思路2：书上说的，使用数学方法。</p>
+<h3 id="63">第 63 题：股票的最大利润</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/79/">股票的最大利润 </a>。</p>
+<blockquote>
+<p>假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖交易该股票可能获得的利润是多少？</p>
+<p>例如一只股票在某些时间节点的价格为 <code>[9, 11, 8, 5, 7, 12, 16, 14]</code>。</p>
+<p>如果我们能在价格为 5 的时候买入并在价格为 16 时卖出，则能收获最大的利润 11。</p>
+<p>样例：</p>
+<p>输入：<code>[9, 11, 8, 5, 7, 12, 16, 14]</code></p>
+<p>输出：11</p>
+</blockquote>
+<p>思路：在过往的股价中找到最低价，“当前股价 - 最低价”为获利。遍历过程中，找到这个获利的最大值即可。由于只允许做一次股票买卖交易，枚举每一天作为卖出的日子，买入日子一定在卖出日子之前，为了获利最多，希望买入的日子的股票价格尽可能低。用 minnum 记录第 $0$ 到 第 $i$ 天的最低价格，则在第 $i$ 天卖出的最大获利为 <code>nums[i] - minnum</code>，枚举 $i$ 找到最大获利。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 63 题：股票的最大利润-1" src="http://upload-images.jianshu.io/upload_images/414598-32400a4e7cb7e04c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def maxDiff(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        l = len(nums)
+        if l == 0:
+            return 0
+
+        min_val = nums[0]
+        max_profit = 0
+        for i in range(1, l):
+            min_val = min(min_val, nums[i])
+            max_profit = max(max_profit, nums[i] - min_val)
+        return max_profit
+</code></pre>
+<p>同 LeetCode 第  121 题。</p>
+<p>传送门：<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">121. 买卖股票的最佳时机</a>。</p>
+<blockquote>
+<p>给定一个数组，它的第 <em>i</em> 个元素是一支给定股票第 <em>i</em> 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p><strong>示例 1:</strong></p>
+<p><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+  注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。</code></p>
+<p><strong>示例 2:</strong></p>
+<p><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</code></p>
+</blockquote>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution2 {
+
+    // 留意这个解法的语义
+
+    public int maxProfit(int[] prices) {
+        int buy = Integer.MIN_VALUE;
+        int sell = 0;
+        for (int price : prices) {
+            // 在当前以及之前如果执行了买操作，能够得到的利润的最大值
+            buy = Math.max(buy, -price);
+            // 在当前以及之前如果执行了卖操作，能够得到的利润的最大值
+            sell = Math.max(sell, buy + price);
+        }
+        return sell;
+    }
+
+    public static void main(String[] args) {
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        Solution2 solution2 = new Solution2();
+        int maxProfit = solution2.maxProfit(prices);
+        System.out.println(maxProfit);
+    }
+}
+</code></pre>
+<p>区别于 LeetCode 第 122 题。</p>
+<p>传送门： <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">122. 买卖股票的最佳时机 II</a>。</p>
+<blockquote>
+<p>给定一个数组，它的第 <em>i</em> 个元素是一支给定股票第 <em>i</em> 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p>
+<p><strong>注意：</strong>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p><strong>示例 1:</strong></p>
+<p><code>输入: [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+  随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</code></p>
+<p><strong>示例 2:</strong></p>
+<p><code>输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+  注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+  因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</code></p>
+<p><strong>示例 3:</strong></p>
+<p><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</code></p>
+</blockquote>
+<p>参考资料：从零开始学贪心算法 - CSDN博客  https://blog.csdn.net/qq_32400847/article/details/51336300</p>
+<h3 id="64-1-2-3-n">第 64 题：求 1 + 2 + 3 + ... + n</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/80/">AcWing：求 1 + 2 + 3 + ... + n</a>，<a href="https://www.nowcoder.com/practice/7a0da8fc483247ff8800059e12d7caf1?tpId=13&amp;tqId=11200&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>求 <code>1+2+…+n</code>，要求不能使用乘除法、for、while、if、else、switch、case 等关键字及条件判断语句（A?B:C）。</p>
+<p>样例：</p>
+<p>输入：10</p>
+<p>输出：55</p>
+</blockquote>
+<p>Java 代码：</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 64 题：求 1 + 2 + 3 + ... + n-1" src="http://upload-images.jianshu.io/upload_images/414598-bea6f638ecb22589.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p><img alt="《剑指 Offer （第 2 版）》第 64 题：求 1 + 2 + 3 + ... + n-2" src="http://upload-images.jianshu.io/upload_images/414598-0a40968b430d0376.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>分析：等差数列求和的通项公式如下：
+$$
+s=\cfrac{n(n+1)}{2} = \cfrac{n^2+n}{2}
+$$
+将上面的公式中的运算换成只用加法、乘方运算、位运算。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def getSum(self, n):
+        &quot;&quot;&quot;
+        :type n: int
+        :rtype: int
+        &quot;&quot;&quot;
+
+        return (n ** 2 + n) &gt;&gt; 1
+</code></pre>
+<h3 id="65">第 65 题：不用加减乘除做加法</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/81/"> 不用加减乘除做加法</a>，<a href="https://www.nowcoder.com/practice/59ac416b4b944300b617d4f7f111b215?tpId=13&amp;tqId=11201&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>写一个函数，求两个整数之和，要求在函数体内不得使用＋、－、×、÷ 四则运算符号。</p>
+<p>样例：</p>
+<p>输入：<code>num1 = 1 , num2 = 2</code></p>
+<p>输出：3</p>
+</blockquote>
+<p>思路：不用加减乘除，那就只能用位运算了。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 65 题：不用加减乘除做加法-1" src="http://upload-images.jianshu.io/upload_images/414598-2668d28f869ff17e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>下面是交换两个数的特殊写法，了解一下。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 65 题：不用加减乘除做加法-2" src="http://upload-images.jianshu.io/upload_images/414598-d4045cdfc7e3acde.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>Python 代码：在 Python 内部对整数的处理分为普通整数和长整数，普通整数长度为机器位长，通常都是 $32$ 位，超过这个范围的整数就自动当长整数处理，而长整数的范围几乎完全没限制。</p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def add(self, num1, num2):
+        &quot;&quot;&quot;
+        :type num1: int
+        :type num2: int
+        :rtype: int
+        &quot;&quot;&quot;
+        while num2 != 0:
+            # 不进位加法
+            temp = num1 ^ num2
+            # 加法进位
+            num2 = (num1 &amp; num2) &lt;&lt; 1
+            # 把高于 32 位的 1 全部变成 0
+            num1 = temp &amp; 0xFFFFFFFF
+        return num1 if num1 &gt;&gt; 31 == 0 else num1 - (1 &lt;&lt; 32)
+</code></pre>
+<p>说明：Python 中 int 类型的最大值是 <code>0x7fffffff</code>。</p>
+<p>Python 代码：与上面的写法等价</p>
+<pre><code class="language-python">class Solution(object):
+    def add(self, num1, num2):
+        &quot;&quot;&quot;
+        :type num1: int
+        :type num2: int
+        :rtype: int
+        &quot;&quot;&quot;
+
+        while True:
+            # 不进位加法
+            s = num1 ^ num2
+            # 计算进位
+            carry = num1 &amp; num2
+
+            # 手动把高于 32 位的部分变成 0
+            num1 = s &amp; 0xFFFFFFFF
+            num2 = carry &lt;&lt; 1
+
+            if carry == 0:
+                break
+        # 如果是正数和 0 ，就直接返回这个正数好了
+        if num1 &gt;&gt; 31 == 0:
+            return num1
+        # 如果是负数
+        return num1 - (1 &lt;&lt; 32)
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    public int Add(int num1, int num2) {
+        int sum = 0;
+        while (true) {
+            // 计算个位
+            sum = num1 ^ num2;
+
+            int carry = num1 &amp; num2;
+            if (carry == 0) {
+                break;
+            }
+            num1 = sum;
+            // 计算进位
+            num2 = carry &lt;&lt; 1;
+
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int add = solution.Add(14, 15);
+        System.out.println(add);
+    }
+}
+</code></pre>
+<p>还可以用“全加器”实现。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 65 题：不用加减乘除做加法-3" src="http://upload-images.jianshu.io/upload_images/414598-4f4327b9b6f7fbe1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def add(self, num1, num2):
+        &quot;&quot;&quot;
+        :type num1: int
+        :type num2: int
+        :rtype: int
+        &quot;&quot;&quot;
+        # 特判
+        if num1 == 0 or num2 == 0:
+            return max(num1, num2)
+
+        res = 0
+        # 进位
+        carry = 0
+        for i in range(32):
+            a = num1 &amp; (1 &lt;&lt; i)
+            b = num2 &amp; (1 &lt;&lt; i)
+            # 不进位的和
+            s_ = (a ^ b) ^ carry
+            # 下面计算进位，三者之中，任意两者同为 1 的时候，就可以进位
+            carry = (a &amp; b) | (a &amp; carry) | (b &amp; carry)
+            carry &lt;&lt;= 1
+            res += s_
+        if res &gt;&gt; 31 == 0:
+            return res
+        return res - (1 &lt;&lt; 32)
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution {
+
+    public int Add(int num1, int num2) {
+        int sum = 0;
+        while (true) {
+            sum = num1 ^ num2;
+            int carry = num1 &amp; num2;
+            if (carry == 0) {
+                break;
+            }
+            num1 = sum;
+            num2 = carry &lt;&lt; 1;
+
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int add = solution.Add(14, 15);
+        System.out.println(add);
+    }
+}
+</code></pre>
+<p>Java 代码：</p>
+<pre><code class="language-java">public class Solution2 {
+
+    // 书上的写法
+    public int Add(int num1, int num2) {
+        int sum = 0;
+        int carry = 0;
+        do {
+            sum = num1 ^ num2;
+            carry = num1 &amp; num2;
+
+            num1 = sum;
+            num2 = carry &lt;&lt; 1;
+        } while (carry != 0);
+        return sum;
+    }
+}
+</code></pre>
+<h3 id="66">第 66 题：构建乘积数组</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/82/">构建乘积数组</a>，<a href="https://www.nowcoder.com/practice/94a4d381a68b47b7a8bed86f2975db46?tpId=13&amp;tqId=11204&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>给定一个数组<code>A[0, 1, …, n-1]</code>，请构建一个数组<code>B[0, 1, …, n-1]</code>，其中 <code>B</code> 中的元素<code>B[i] = A[0] × A[1] × … × A[i - 1] × A[i + 1] × … × A[n - 1]</code>。</p>
+<p>不能使用除法。</p>
+<p>样例：</p>
+<p>输入：<code>[1, 2, 3, 4, 5]</code></p>
+<p>输出：<code>[120, 60, 40, 30, 24]</code></p>
+<p><strong>思考题</strong>：</p>
+<ul>
+<li>能不能只使用常数空间？（除了输出的数组之外）</li>
+</ul>
+</blockquote>
+<p><img alt="《剑指 Offer （第 2 版）》第 66 题：构建乘积数组-1" src="http://upload-images.jianshu.io/upload_images/414598-463ad49cddc9fb23.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>思路：使用矩阵法求解，将矩阵分为上三角矩阵和下三角矩阵，分别求乘积。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 66 题：构建乘积数组-2" src="http://upload-images.jianshu.io/upload_images/414598-360bfbd499628d2b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def multiply(self, A):
+        &quot;&quot;&quot;
+        :type A: List[int]
+        :rtype: List[int]
+        &quot;&quot;&quot;
+
+        l = len(A)
+        if l == 0:
+            return []
+        b = [None for _ in range(l)]
+
+        b[0] = 1
+        # 计算下三角连乘的结果
+        for i in range(1, l):
+            b[i] = b[i - 1] * A[i - 1]
+
+        temp = 1
+        for i in range(l - 2, -1, -1):
+            temp *= A[i + 1]
+            b[i] *= temp
+        return b
+</code></pre>
+<p>Python 代码：</p>
+<pre><code class="language-python"># 66、构建乘积数组
+
+class Solution(object):
+    def multiply(self, A):
+        &quot;&quot;&quot;
+        :type A: List[int]
+        :rtype: List[int]
+        &quot;&quot;&quot;
+
+        l = len(A)
+        if l == 0:
+            return []
+        b = [1 for _ in range(l)]
+        temp = 1
+        for index in range(l):
+            b[index] *= temp
+            temp *= A[index]
+        temp = 1
+        for index in range(l - 1, -1, -1):
+            b[index] *= temp
+            temp *= A[index]
+        return b
+</code></pre>
+<p>Java 代码：</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 66 题：构建乘积数组-3" src="http://upload-images.jianshu.io/upload_images/414598-22eb8c11611891f4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>C++ 代码：</p>
+<pre><code class="language-c++">class Solution {
+public:
+    vector&lt;int&gt; multiply(const vector&lt;int&gt;&amp; A) {
+        vector&lt;int&gt;left(A.size(),1);
+        vector&lt;int&gt;right(A.size(),1);
+        for(int i = 1;i&lt;A.size();i++){
+            left[i] = A[i-1]*left[i-1];
+        }
+        for(int i = A.size()-2;i&gt;=0;i--){
+            right[i] = A[i+1]*right[i+1];
+        }
+        vector&lt;int&gt;B(A.size(),0);
+        for(int i = 0;i&lt;A.size();i++){
+            B[i] = left[i]*right[i];
+        }
+        return B;
+    }
+};
+</code></pre>
+<p>作者：cornerCao
+链接：https://www.acwing.com/solution/AcWing/content/759/
+来源：AcWing
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h3 id="67">第 67 题：把字符串转换成整数</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/83/">把字符串转换成整数</a>，<a href="https://www.nowcoder.com/practice/1277c681251b4372bdef344468e4f26e?tpId=13&amp;tqId=11202&amp;tPage=3&amp;rp=3&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking">牛客网 online judge 地址</a>。</p>
+<blockquote>
+<p>请你写一个函数StrToInt，实现把字符串转换成整数这个功能。</p>
+<p>当然，不能使用atoi或者其他类似的库函数。</p>
+<p>样例：</p>
+<p>```
+输入："123"</p>
+<p>输出：123
+```</p>
+<p><strong>注意</strong>:</p>
+<p>你的函数应满足下列条件：</p>
+<ol>
+<li>忽略所有行首空格，找到第一个非空格字符，可以是 ‘+/−+/−’ 表示是正数或者负数，紧随其后找到最长的一串连续数字，将其解析成一个整数；</li>
+<li>整数后可能有任意非数字字符，请将其忽略；</li>
+<li>从前往后遍历时，如果第一段连续非空格字符串不是一个有效的整数表示，则返回0；</li>
+<li>如果整数大于INT_MAX(2^31 − 1)，请返回INT_MAX；如果整数小于INT_MIN(−2^31) ，请返回INT_MIN；</li>
+</ol>
+</blockquote>
+<p>Java 代码：</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 67 题：把字符串转换成整数-1" src="http://upload-images.jianshu.io/upload_images/414598-99e95d231eb26728.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>同 LeetCode 第 8 题。</p>
+<p>传送门：<a href="https://leetcode-cn.com/problems/string-to-integer-atoi/description/">8. 字符串转换整数 (atoi)</a>。</p>
+<blockquote>
+<p>请你来实现一个 <code>atoi</code> 函数，使其能将字符串转换成整数。</p>
+<p>首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。</p>
+<p>当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。</p>
+<p>该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。</p>
+<p>注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。</p>
+<p>在任何情况下，若函数不能进行有效的转换时，请返回 0。</p>
+<p><strong>说明：</strong></p>
+<p>假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−231,  231 − 1]。如果数值超过这个范围，qing返回  INT_MAX (231 − 1) 或 INT_MIN (−231) 。</p>
+<p><strong>示例 1:</strong></p>
+<p><code>输入: "42"
+输出: 42</code></p>
+<p><strong>示例 2:</strong></p>
+<p><code>输入: "   -42"
+输出: -42
+解释: 第一个非空白字符为 '-', 它是一个负号。
+  我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到 -42 。</code></p>
+<p><strong>示例 3:</strong></p>
+<p><code>输入: "4193 with words"
+输出: 4193
+解释: 转换截止于数字 '3' ，因为它的下一个字符不为数字。</code></p>
+<p><strong>示例 4:</strong></p>
+<p><code>输入: "words and 987"
+输出: 0
+解释: 第一个非空字符是 'w', 但它不是数字或正、负号。
+  因此无法执行有效的转换。</code></p>
+<p><strong>示例 5:</strong></p>
+<p><code>输入: "-91283472332"
+输出: -2147483648
+解释: 数字 "-91283472332" 超过 32 位有符号整数范围。 
+  因此返回 INT_MIN (−231) 。</code></p>
+</blockquote>
+<p>Python 代码：Python 代码比较特别，要注意，符号位不在第 $32$ 位上</p>
+<pre><code class="language-python">class Solution(object):
+    def strToInt(self, str):
+        &quot;&quot;&quot;
+        :type str: str
+        :rtype: int
+        &quot;&quot;&quot;
+
+        # 去掉左右空格
+        s = str.strip()
+
+        l = len(s)
+        if l == 0:
+            return 0
+
+        # 遍历指针
+        index = 0
+        # 符号
+        sign = 1
+        # 第 1 位符号位
+        s_sign = s[0]
+
+        # 最终结果
+        res = 0
+
+        INT_MIN = -1 &lt;&lt; 31
+        INT_MAX = (1 &lt;&lt; 31) - 1
+
+        # 符号位是正或负号的时候 index 都加 1
+        if s_sign == '+':
+            index += 1
+        elif s_sign == '-':
+            index += 1
+            sign = -1
+
+        for i in range(index, l):
+            c = s[i]
+            if c.isdigit():
+                cint = ord(c) - ord('0')
+                res = res * 10 + cint
+                if res * sign &gt; INT_MAX:
+                    break
+            else:
+                break
+
+        res *= sign
+
+        if res &gt; INT_MAX:
+            return INT_MAX
+        elif res &lt; INT_MIN:
+            return INT_MIN
+        return res
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    str = '2147483647'
+    result = solution.strToInt(str)
+    print(result)
+</code></pre>
+<h3 id="68">第 68 题：树中两个节点的最近公共祖先</h3>
+<p>传送门：<a href="https://www.acwing.com/problem/content/84/">树中两个结点的最低公共祖先</a>。</p>
+<blockquote>
+<p>给出一个二叉树，输入两个树节点，求它们的最低公共祖先。</p>
+<p>一个树节点的祖先节点包括它本身。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>输入的二叉树不为空；</li>
+<li>输入的两个节点一定不为空，且是二叉树中的节点；</li>
+</ul>
+<p>样例：</p>
+<p>二叉树 <code>[8, 12, 2, null, null, 6, 4, null, null, null, null]</code> 如下图所示：
+<code>8
+ / \
+12  2
+     / \
+   6   4</code>
+1. 如果输入的树节点为 2 和 12，则输出的最低公共祖先为树节点 8 。</p>
+<ol>
+<li>如果输入的树节点为 2 和 6 ，则输出的最低公共祖先为树节点 2 。</li>
+</ol>
+</blockquote>
+<p>同 LeetCode 第 236 题：二叉树的最近公共祖先。</p>
+<p>传送门：<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a>。</p>
+<blockquote>
+<p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p><a href="https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin">百度百科</a>中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
+<p>例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 68 题：树中两个节点的最近公共祖先-1" src="http://upload-images.jianshu.io/upload_images/414598-ca8357e8db147f14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p><strong>示例 1:</strong></p>
+<p><code>输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+输出: 3
+解释: 节点 5 和节点 1 的最近公共祖先是节点 3。</code></p>
+<p><strong>示例 2:</strong></p>
+<p><code>输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+输出: 5
+解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。</code></p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>所有节点的值都是唯一的。</li>
+<li>p、q 为不同节点且均存在于给定的二叉树中。</li>
+</ul>
+</blockquote>
+<p>分析：1、如果有指向父结点的指针；2、没有指向父结点的指针。</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 68 题：树中两个节点的最近公共祖先-2" src="http://upload-images.jianshu.io/upload_images/414598-c3119b6c61b86544.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p><img alt="《剑指 Offer （第 2 版）》第 68 题：树中两个节点的最近公共祖先-3" src="http://upload-images.jianshu.io/upload_images/414598-e1c0432bd7ebe820.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>Python 代码：</p>
+<pre><code class="language-python">class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        &quot;&quot;&quot;
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        &quot;&quot;&quot;
+
+        if root is None:
+            return None
+        if root == p or root == q:
+            return root
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        if left and right:
+            return root
+        if left is None:
+            return right
+        if right is None:
+            return left
+        return None
+</code></pre>
+<p>Java 代码：</p>
+<p><img alt="《剑指 Offer （第 2 版）》第 68 题：树中两个节点的最近公共祖先-4" src="http://upload-images.jianshu.io/upload_images/414598-eab6e99f48f5d2ab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<hr />
+<p>参考资料：</p>
+<p>B 站 UP 主“大雪菜”直播：https://www.acwing.com/activity/content/introduction/5/。</p>
+<p><a href="https://www.cnblogs.com/qiaojushuang/p/7822066.html">《剑指offer》面试题的Python实现</a></p>
+<p>剑指Offer系列刷题笔记汇总
+https://blog.csdn.net/c406495762/article/details/79247243#%E9%93%BE%E8%A1%A8-8%E9%81%93</p>
+<p>https://github.com/gatieme/CodingInterviews</p>
+<p><a href="https://blog.csdn.net/c406495762/article/details/79247243#%E9%93%BE%E8%A1%A8-8%E9%81%93">剑指Offer系列刷题笔记汇总</a>。</p>
+<p>第 2 版 Java 实现代码仓库：<a href="https://github.com/cris1313/SwordForOffer">https://github.com/cris1313/SwordForOffer</a> </p>
+<p>白夜行515 </p>
+<p><a href="https://blog.csdn.net/baiye_xing/article/details/78428561">https://blog.csdn.net/baiye_xing/article/details/78428561</a></p>
+<p>剑指Offer——编程题的Java实现（更新完毕……） </p>
+<p><a href="https://blog.csdn.net/u011464124/article/details/76706011">https://blog.csdn.net/u011464124/article/details/76706011</a></p>
+<p>剑指offer题目java实现 </p>
+<p><a href="https://www.cnblogs.com/ysw-go/p/6272551.html">https://www.cnblogs.com/ysw-go/p/6272551.html</a></p>
+<p>极客学院 </p>
+<p><a href="http://wiki.jikexueyuan.com/project/for-offer/question-twenty-seven.html">http://wiki.jikexueyuan.com/project/for-offer/question-twenty-seven.html</a></p>
+<p>https://blog.csdn.net/column/details/codingintervieww.html&gt;</p>
+<p><img alt="image-20190107005346026" src="http://upload-images.jianshu.io/upload_images/414598-4d209552dcb4f9e5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<hr />
+<p>题目：String 空字符串替换：从后向前替换，边复制，边覆盖，不要思维定势</p>
+<p>单链表问题应该引起重视：链表问题如果不想“穿针引线”那么就让递归去完成！</p>
+<p>从尾到头打印链表：（1）用栈（2）递归和栈密不可分（递归深度很深的时候，不要这么做）</p>
+<p>第 8 题：二叉树的下一个结点</p>
+<p>Java 代码：</p>
+<p><img alt="image-20190107112051561" src="http://upload-images.jianshu.io/upload_images/414598-c5701462f06d2f6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>57_1、队列的最大值</p>
+<p>传送门：<a href=""></a>。</p>
+<blockquote></blockquote>
+<h2 id="_1">参考资料</h2>
+<p>1、剑指Offer系列刷题笔记汇总</p>
+<p>https://blog.csdn.net/c406495762/article/details/79247243#%E9%93%BE%E8%A1%A8-8%E9%81%93</p>
+<p>这篇作者的 GitHub：https://github.com/Jack-Cherish/LeetCode</p>
+<p>2、https://github.com/gatieme/CodingInterviews</p>
+<p>（本节完）</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
