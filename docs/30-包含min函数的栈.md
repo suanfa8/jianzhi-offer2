@@ -1,0 +1,349 @@
+# [剑指 Offer 第 2 版第 30 题] “包含min函数的栈”做题记录
+
+### 第 30 题：定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的 min 函数
+
+传送门：[AcWing：包含min函数的栈](https://www.acwing.com/problem/content/90/)，[牛客网 online judge 地址](https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking)。
+
+> 设计一个支持 push，pop，top 等操作并且可以在 O(1) 时间内检索出最小元素的堆栈。
+>
+> - push(x)–将元素x插入栈中
+> - pop()–移除栈顶元素
+> - top()–得到栈顶元素
+> - getMin()–得到栈中最小元素
+>
+> 样例：
+>
+> ```
+> MinStack minStack = new MinStack();
+> minStack.push(-1);
+> minStack.push(3);
+> minStack.push(-4);
+> minStack.getMin();   --> Returns -4.
+> minStack.pop();
+> minStack.top();      --> Returns 3.
+> minStack.getMin();   --> Returns -1.
+> ```
+
+思路：
+
++ 定义两个栈，一个存放入的值，另一个存最小值，两个栈应该是同步 push 和 pop，否则还要分类讨论，代码编写容易出错。
++ 因为要用 $O(1)$ 实现当前栈中最小，很容易想到用空间换时间，因此可以设置一个和底层 `Stack` 同步的、称之为“最小栈”的栈成员。具体操作如下代码所示。
+
+Python 代码：
+
+```python
+class MinStack(object):
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = []
+        self.helper = []
+
+    def push(self, x):
+        """
+        :type x: int
+        :rtype: void
+        """
+
+        if len(self.stack) == 0:
+            self.helper.append(x)
+            self.stack.append(x)
+        else:
+            # 如果将要 push 的元素比辅助栈的栈顶元素还大，不能放这个元素，
+            # 此时应该把辅助栈的栈顶元素再复制一份
+            peek = self.helper[-1]
+            if x > peek:
+                self.stack.append(x)
+                self.helper.append(peek)
+            else:
+                self.stack.append(x)
+                self.helper.append(x)
+                
+
+    def pop(self):
+        """
+        :rtype: void
+        """
+
+        if len(self.stack) == 0:
+            return
+        # 同步 pop 元素
+        self.helper.pop()
+        return self.stack.pop()
+
+    def top(self):
+        """
+        :rtype: int
+        """
+        return self.stack[-1]
+
+    def getMin(self):
+        """
+        :rtype: int
+        """
+        return self.helper[-1]
+```
+
+Java 代码：
+
+```java
+import java.util.Stack;
+
+public class Solution {
+
+    private Stack<Integer> minStack = new Stack<>();
+    private Stack<Integer> dataStack = new Stack<>();
+
+    public void push(int node) {
+        if (minStack.isEmpty()) {
+            minStack.push(node);
+            dataStack.push(node);
+            return;
+        }
+        int curMin = minStack.peek();
+        if (node < curMin) {
+            minStack.push(node);
+        } else {
+            minStack.push(curMin);
+        }
+        dataStack.push(node);
+    }
+
+    public void pop() {
+        minStack.pop();
+        dataStack.pop();
+    }
+
+    public int top() {
+        return dataStack.pop();
+    }
+
+    public int min() {
+        return minStack.peek();
+    }
+}
+```
+
+思路2：我们除了维护基本的栈结构之外，还需要维护一个“辅助栈”。下面介绍如何维护单调栈：做到以下两点，辅助栈的栈顶元素，就是当前栈中的最小数。
+
+1、当我们向栈中压入一个数时，如果该数小于（只要小于）“辅助栈”的栈顶元素，则将该数同时压入“辅助栈”中；否则，不压入。由于栈具有先进后出性质，所以在该数被弹出之前，“辅助栈”中一直存在一个数比该数小，所以该数一定不会被当做最小数输出。
+
+2、当我们从栈中弹出一个数时，如果该数等于单调栈的栈顶元素，同时将单调栈的栈顶元素弹出。
+
+时间复杂度：四种操作都只有常数次入栈出栈操作，所以时间复杂度都是 $O(1)$。
+
+Python 代码：
+
+```python
+# 定义两个栈，一个存放入的值，另一个存最小值，两个栈应该是同步 push 和 pop，否则还要分类讨论，代码编写容易出错。
+
+
+class MinStack(object):
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = []
+        self.helper = []
+
+    def push(self, x):
+        """
+        :type x: int
+        :rtype: void
+        """
+        # 无论如何都 push
+        self.stack.append(x)
+        # 如果放入的元素小于辅助栈顶元素，辅助栈顶才 push，否则什么都不做
+        if not self.helper or self.helper[-1] > x:
+            self.helper.append(x)
+
+    def pop(self):
+        """
+        :rtype: void
+        """
+
+        if len(self.stack) == 0:
+            return
+        # 如果弹出的元素等于辅助栈栈顶元素，才将辅助栈顶元素弹出
+        if self.helper[-1] == self.stack[-1]:
+            self.helper.pop()
+        return self.stack.pop()
+
+    def top(self):
+        """
+        :rtype: int
+        """
+        return self.stack[-1]
+
+    def getMin(self):
+        """
+        :rtype: int
+        """
+        return self.helper[-1]
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(x)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+```
+
+Java 代码：
+
+```java
+import java.util.Stack;
+
+public class Solution {
+
+    private Stack<Integer> minStack = new Stack<>();
+    private Stack<Integer> dataStack = new Stack<>();
+
+    public void push(int node) {
+        if (minStack.isEmpty()) {
+            minStack.push(node);
+            dataStack.push(node);
+            return;
+        }
+        int curMin = minStack.peek();
+        if (node < curMin) {
+            minStack.push(node);
+        } else {
+            minStack.push(curMin);
+        }
+        dataStack.push(node);
+    }
+
+    public void pop() {
+        minStack.pop();
+        dataStack.pop();
+    }
+
+    public int top() {
+        return dataStack.pop();
+    }
+
+    public int min() {
+        return minStack.peek();
+    }
+}
+```
+
+LeetCode 第 155 题：最小栈
+
+设置一个辅助栈，保存当前最小的元素。
+
+```python
+class MinStack(object):
+
+    # 【特别注意】数据栈和辅助栈要同步，特殊测试用例为：
+    # 依次 push 0 1 0，马上弹栈，查询最小
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        # 数据栈
+        self.data_stack = []
+        # 辅助栈
+        self.help_stack = []
+
+    def push(self, x):
+        """
+        :type x: int
+        :rtype: void
+        """
+        self.data_stack.append(x)
+        if len(self.help_stack) == 0 or x < self.help_stack[-1]:
+            self.help_stack.append(x)
+        else:
+            self.help_stack.append(self.help_stack[-1])
+
+    def pop(self):
+        """
+        :rtype: void
+        """
+        if len(self.data_stack) > 0:
+            ret = self.data_stack.pop()
+            self.help_stack.pop()
+            return ret
+
+    def top(self):
+        """
+        :rtype: int
+        """
+        if len(self.data_stack) > 0:
+            return self.data_stack[-1]
+
+    def getMin(self):
+        """
+        :rtype: int
+        """
+        if len(self.data_stack) > 0:
+            return self.help_stack[-1]
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(x)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+if __name__ == '__main__':
+    min_stack = MinStack()
+    min_stack.push(0)
+    min_stack.push(1)
+    min_stack.push(0)
+    print(min_stack.getMin())
+    min_stack.pop()
+    print(min_stack)
+
+    print(min_stack.getMin())
+```
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+  inlineMath: [['$','$'], ['\\(','\\)']],
+  processEscapes: true
+  },
+displayAlign : "left",
+TeX: {
+        equationNumbers: {
+            autoNumber: "all",
+            useLabelIds: true
+        }
+    },
+    "HTML-CSS": {
+        linebreaks: {
+            automatic: true
+        },
+        scale: 100,
+        styles: {
+          ".MathJax_Display": {
+            "text-align": "left",
+            "width" : "auto",
+            "margin": "10px 0px 10px 0px !important",
+            "background-color": "#f5f5f5 !important",
+            "border-radius": "3px !important",
+            border:  "1px solid #ccc !important",
+            padding: "5px 5px 5px 5px !important"
+          },
+          ".MathJax": {
+            "background-color": "#f5f5f5 !important",
+            padding: "2px 2px 2px 2px !important"
+          }
+        }
+    },
+    SVG: {
+        linebreaks: {
+            automatic: true
+        }
+    }
+});
+</script>
